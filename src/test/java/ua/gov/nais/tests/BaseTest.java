@@ -15,14 +15,14 @@ public class BaseTest {
     private final String EX_PATH = "src\\main\\resources\\1.0.0_0.crx";
     protected WebDriver driver;
 
-    private WebDriver getDriver(String browser) {
+ /*   private WebDriver getDriver(String browser) {
         switch (browser){
             default:{
                 System.setProperty("webdriver.chrome.driver", CHROME_PATH);
                 return new ChromeDriver();
             }
         }
-    }
+    }*/
 
     @BeforeClass
     public void setUp() {
