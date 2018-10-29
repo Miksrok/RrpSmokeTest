@@ -16,6 +16,7 @@ public class LoginPage {
     private WebDriver driver;
 
     //test
+    //test 2
 
     private final String LOGIN = "ki00cnp0020";
     private final String PASSWORD = "123456789";
