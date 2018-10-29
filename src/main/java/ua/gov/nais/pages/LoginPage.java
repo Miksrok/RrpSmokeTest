@@ -11,12 +11,7 @@ import static java.awt.event.KeyEvent.*;
 import static java.awt.event.KeyEvent.VK_ENTER;
 import static java.awt.event.KeyEvent.VK_TAB;
 
-public class LoginPage {
-
-    private WebDriver driver;
-
-    //test
-    //test 2
+public class LoginPage extends MotherPage{
 
     private final String LOGIN = "ki00cnp0020";
     private final String PASSWORD = "123456789";
@@ -32,8 +27,7 @@ public class LoginPage {
     private WebElement confirmationButton;
 
     public LoginPage(WebDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     public void openLoginPage(){
