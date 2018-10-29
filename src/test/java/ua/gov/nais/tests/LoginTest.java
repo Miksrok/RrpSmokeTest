@@ -1,6 +1,7 @@
 package ua.gov.nais.tests;
 
 import org.testng.annotations.Test;
+import ua.gov.nais.pages.LeftSideMenu;
 import ua.gov.nais.pages.LoginPage;
 
 public class LoginTest extends BaseTest{
@@ -13,6 +14,15 @@ public class LoginTest extends BaseTest{
         loginPage.enterPassword();
         loginPage.pressConfirmationButtn();
         loginPage.enterKeyInformation();
+        LeftSideMenu leftSideMenu = new LeftSideMenu(driver);
+        leftSideMenu.pressRegistrationAndProcessingButton();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        leftSideMenu.pressApplicationRegistrationButton();
+        leftSideMenu.pressOwnershipButton();
     }
 
 }
