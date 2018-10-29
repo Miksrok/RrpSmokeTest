@@ -15,6 +15,8 @@ public class LoginPage {
 
     private WebDriver driver;
 
+    //test
+
     private final String LOGIN = "ki00cnp0020";
     private final String PASSWORD = "123456789";
     private final String URL = "https://register.test.nais.gov.ua/";
