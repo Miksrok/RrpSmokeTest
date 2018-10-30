@@ -3,6 +3,7 @@ package ua.gov.nais.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import ua.gov.nais.utilities.ActionsWithElements;
 
 public class LeftSideMenu extends MotherPage{
 
@@ -29,14 +30,13 @@ public class LeftSideMenu extends MotherPage{
     }
 
     public void pressRegistrationAndProcessingButton(){
-        registrationAndProcessingButton.click();
+        ActionsWithElements.init(driver).clickOnElement (registrationAndProcessingButton);
     }
     public void pressApplicationRegistrationButton(){
-        applicationRegistrationButton.click();
+        ActionsWithElements.init(driver).clickOnElement (applicationRegistrationButton);
     }
     public void pressOwnershipButton(){
-       ownershipButton.click();
+        ActionsWithElements.init(driver).clickOnElement (ownershipButton);
     }
-
 
 }
