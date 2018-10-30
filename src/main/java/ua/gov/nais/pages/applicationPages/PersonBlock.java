@@ -1,4 +1,4 @@
 package ua.gov.nais.pages.applicationPages;
 
-public class RenameItLater {
+public class PersonBlock {
 }

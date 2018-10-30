@@ -3,6 +3,7 @@ package ua.gov.nais.tests;
 import org.testng.annotations.Test;
 import ua.gov.nais.pages.LeftSideMenu;
 import ua.gov.nais.pages.LoginPage;
+import ua.gov.nais.pages.applicationPages.BottomBlock;
 
 public class LoginTest extends BaseTest{
 
@@ -23,6 +24,9 @@ public class LoginTest extends BaseTest{
         }
         leftSideMenu.pressApplicationRegistrationButton();
         leftSideMenu.pressOwnershipButton();
+        BottomBlock bottomBlock = new BottomBlock(driver);
+        bottomBlock.pressApplicationDeadlineList();
+        bottomBlock.pressTwoBusinessDaysListItem();
     }
 
 }
