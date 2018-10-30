@@ -48,19 +48,16 @@ public class PersonBlock extends MotherPage {
     @FindBy (xpath = "//*[@id=\"textfield-1528-inputEl\"]")
     private WebElement passportNumberField;
 
-    @FindBy (xpath = "")
+    @FindBy (xpath = "//*[@id=\"datefield-1529-inputEl\"]")
+    private WebElement passportDateField;
+
+    @FindBy (xpath = "//*[@id=\"RstCore_searchLocalTipsCombobox-1531-inputEl\"]")
     private WebElement passportPublisherField;
 
     public PersonBlock(WebDriver driver) {
         super(driver);
     }
 
-    public void testClick(){
-
-
-
-
-    }
     public void clickPersonBlockButton(){
         ActionsWithElements.init(driver).clickOnElement(personBlock);
     }
@@ -82,10 +79,22 @@ public class PersonBlock extends MotherPage {
     public void clickCloseRoleList(){
         ActionsWithElements.init(driver).clickOnElement(closeRoleListButton);
     }
-    public void enterFullName(){
+    public void enterFullName(String name){
         List <WebElement> list = driver.findElements(fullNameLocator);
-        ActionsWithElements.init(driver).enterTextInToInput(list.get(3), "наме");
+        ActionsWithElements.init(driver).enterTextInToInput(list.get(3), name);
     }
-    //test
+    public void enterId(String id){
+        ActionsWithElements.init(driver).enterTextInToInput(idField, id);
+    }
+    public void enterPassportNumber(String number){
+        ActionsWithElements.init(driver).enterTextInToInput(passportNumberField, number);
+    }
+    public void enterPassportDate(String date){
+        ActionsWithElements.init(driver).enterTextInToInput(passportDateField, date);
+    }
+    public void enterPassportPublisher(String publisher){
+        ActionsWithElements.init(driver).enterTextInToInput(passportPublisherField, publisher);
+    }
+
 
 }

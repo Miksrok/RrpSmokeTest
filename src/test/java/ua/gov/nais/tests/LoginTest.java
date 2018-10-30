@@ -1,6 +1,7 @@
 package ua.gov.nais.tests;
 
 import org.testng.annotations.Test;
+import ua.gov.nais.models.Person;
 import ua.gov.nais.pages.LeftSideMenu;
 import ua.gov.nais.pages.LoginPage;
 import ua.gov.nais.pages.applicationPages.BottomBlock;
@@ -37,7 +38,12 @@ public class LoginTest extends BaseTest{
         personBlock.addPersonOfLaw();
         personBlock.addApplicantItem();
         personBlock.clickCloseRoleList();
-        personBlock.enterFullName();
+        Person person = new Person();
+        personBlock.enterFullName(person.getFullName());
+        personBlock.enterId(person.getId());
+        personBlock.enterPassportNumber(person.getPassport());
+        personBlock.enterPassportDate(person.getPassportDate());
+        personBlock.enterPassportPublisher(person.getPassportPublisher());
     }
 
 }

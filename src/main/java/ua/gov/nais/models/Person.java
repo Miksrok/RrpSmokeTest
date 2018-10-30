@@ -11,11 +11,14 @@ public class Person {
 
     private String passport;
 
+    private String passportDate;
+
     private String passportPublisher;
 
     public Person(){
         this.fullName = "Тестовий Робот Автоматович";
         this.passport = "ФФ123456";
+        this.passportDate = "11.11.2012";
         this.passportPublisher = "Зірка смерті";
     }
     {
@@ -34,6 +37,10 @@ public class Person {
 
     public String getPassport() {
         return passport;
+    }
+
+    public String getPassportDate() {
+        return passportDate;
     }
 
     public String getPassportPublisher() {
