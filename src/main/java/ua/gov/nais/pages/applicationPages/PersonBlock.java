@@ -86,5 +86,6 @@ public class PersonBlock extends MotherPage {
         List <WebElement> list = driver.findElements(fullNameLocator);
         ActionsWithElements.init(driver).enterTextInToInput(list.get(3), "наме");
     }
+    //test
 
 }
