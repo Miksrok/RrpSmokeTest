@@ -54,6 +54,9 @@ public class PersonBlock extends MotherPage {
     @FindBy (xpath = "//*[@id=\"RstCore_searchLocalTipsCombobox-1531-inputEl\"]")
     private WebElement passportPublisherField;
 
+    @FindBy (xpath = "//*[@id=\"button-1536-btnInnerEl\"]")
+    private WebElement okButton;
+
     public PersonBlock(WebDriver driver) {
         super(driver);
     }
@@ -94,6 +97,9 @@ public class PersonBlock extends MotherPage {
     }
     public void enterPassportPublisher(String publisher){
         ActionsWithElements.init(driver).enterTextInToInput(passportPublisherField, publisher);
+    }
+    public void pressOkButton(){
+        ActionsWithElements.init(driver).clickOnElement(okButton);
     }
 
 

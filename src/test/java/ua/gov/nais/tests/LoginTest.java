@@ -44,6 +44,7 @@ public class LoginTest extends BaseTest{
         personBlock.enterPassportNumber(person.getPassport());
         personBlock.enterPassportDate(person.getPassportDate());
         personBlock.enterPassportPublisher(person.getPassportPublisher());
+        personBlock.pressOkButton();
     }
 
 }
