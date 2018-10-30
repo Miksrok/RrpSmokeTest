@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.pages.MotherPage;
+import ua.gov.nais.utilities.ActionsWithElements;
 
 public class BottomBlock extends MotherPage {
 
@@ -23,8 +24,12 @@ public class BottomBlock extends MotherPage {
         super(driver);
     }
 
-    public void pressApplicationDeadlineList(){applicationDeadlineList.click(); }
-    public void pressTwoBusinessDaysListItem(){twoBusinessDaysListItem.click(); }
-    public void pressRegisterButton(){registerButton.click(); }
-    public void pressAalterButton(){alterButton.click(); }
+    public void pressApplicationDeadlineList(){
+        ActionsWithElements.init(driver).clickOnElement (applicationDeadlineList); }
+    public void pressTwoBusinessDaysListItem(){
+        ActionsWithElements.init(driver).clickOnElement (twoBusinessDaysListItem); }
+    public void pressRegisterButton(){
+        ActionsWithElements.init(driver).clickOnElement (registerButton); }
+    public void pressAalterButton(){
+        ActionsWithElements.init(driver).clickOnElement (alterButton); }
 }

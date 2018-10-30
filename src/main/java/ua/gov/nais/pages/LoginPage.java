@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import ua.gov.nais.utilities.ActionsWithElements;
 
 import java.awt.*;
 
@@ -34,13 +36,17 @@ public class LoginPage extends MotherPage{
         driver.get(URL);
     }
     public void enterLogin(){
-        loginField.sendKeys(LOGIN);
+        ActionsWithElements.init(driver).enterTextInToInput(loginField, LOGIN);
+/*wait.until(ExpectedConditions.elementToBeClickable(loginField));
+        loginField.sendKeys(LOGIN);*/
     }
     public void enterPassword(){
-        passwordField.sendKeys(PASSWORD);
+        ActionsWithElements.init(driver).enterTextInToInput(passwordField, PASSWORD);
+        /*passwordField.sendKeys(PASSWORD);*/
     }
     public void pressConfirmationButtn(){
-        confirmationButton.click();
+        ActionsWithElements.init(driver).clickOnElement(confirmationButton);
+        /*confirmationButton.click();*/
     }
 
     //Method creates robot for work with modal key-window and enter key data
