@@ -1,11 +1,15 @@
 package ua.gov.nais.pages.applicationPages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.pages.MotherPage;
 import ua.gov.nais.utilities.ActionsWithElements;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PersonBlock extends MotherPage {
 
@@ -31,14 +35,20 @@ public class PersonBlock extends MotherPage {
     @FindBy (xpath = "//*[@id=\"ext-gen2032\"]")
     private WebElement closeRoleListButton;
 
-    @FindBy (xpath = "//*[@id=\"textfield-1510-inputEl\"]")
-   // @FindBy (xpath = "//label[contains(text(), 'ПІБ')]/../..//td[2]/input")
-    private WebElement fullNameField;
+    //@FindBy (xpath = "//*[@id=\"textfield-1510-inputEl\"]")
+   //@FindBy (xpath = "//label[contains(text(), 'ПІБ')]/../..//td[2]/input")
+    //@FindBy (xpath = "//label[contains(text(), 'ПІБ')]")
+    //private List<WebElement> fullNameField = new ArrayList<>();
 
+    private By fullNameLocator = By.xpath("//label[contains(text(), 'ПІБ')]/../..//td[2]/input");
+
+    @FindBy (xpath = "//*[@id=\"textfield-1511-inputEl\"]")
     private WebElement idField;
 
+    @FindBy (xpath = "//*[@id=\"textfield-1528-inputEl\"]")
     private WebElement passportNumberField;
 
+    @FindBy (xpath = "")
     private WebElement passportPublisherField;
 
     public PersonBlock(WebDriver driver) {
@@ -73,7 +83,8 @@ public class PersonBlock extends MotherPage {
         ActionsWithElements.init(driver).clickOnElement(closeRoleListButton);
     }
     public void enterFullName(){
-        ActionsWithElements.init(driver).enterTextInToInput(fullNameField, "наме");
+        List <WebElement> list = driver.findElements(fullNameLocator);
+        ActionsWithElements.init(driver).enterTextInToInput(list.get(3), "наме");
     }
 
 }
