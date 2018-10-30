@@ -12,12 +12,15 @@ public class LeftSideMenu extends MotherPage{
     @FindBy (xpath = "//span[text() = 'Реєстрація заяви']")
     private WebElement applicationRegistrationButton;
 
-
     @FindBy (xpath = "//span[text() = 'заява про реєстрацію права власності']")
     private WebElement ownershipButton;
 
-    private WebElement otherOPwnershipButton;
+    // check xpath
+    @FindBy (xpath = "//span[text() = 'заява про реєстрацію iншого речового права']")
+    private WebElement otherOwnershipButton;
 
+    // check xpath
+    @FindBy (xpath = "//span[text() = 'заява про реєстрацію обтяження']")
     private WebElement arrestButton;
 
 
