@@ -9,7 +9,7 @@ import java.sql.Driver;
 public abstract class MotherPage {
 
     public WebDriver driver;
-    WebDriverWait wait;
+    public WebDriverWait wait;
 
     public MotherPage(WebDriver driver){
         this.driver = driver;

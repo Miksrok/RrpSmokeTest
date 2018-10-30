@@ -1,5 +1,6 @@
 package ua.gov.nais.utilities;
 
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -22,10 +23,12 @@ public class ActionsWithElements {
      */
     public void enterTextInToInput(WebElement input, String text){
         try {
+            input.click();
             input.clear();
             input.sendKeys(text);
         }catch (Exception e){
-            System.out.println("Warning: Some exception");
+            e.printStackTrace();
+            //System.out.println(e.p);
         }
     }
 
@@ -35,11 +38,13 @@ public class ActionsWithElements {
      */
     public void clickOnElement(WebElement element) {
         try {
-            webDriverWait20.until(ExpectedConditions.elementToBeClickable(element));
             webDriverWait20.until(ExpectedConditions.not(ExpectedConditions.invisibilityOf(element)));
+            webDriverWait20.until(ExpectedConditions.elementToBeClickable(element));
             element.click();
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println("Warning: Some exception");
+           // webDriver.close();
         }
     }
 

@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import ua.gov.nais.pages.LeftSideMenu;
 import ua.gov.nais.pages.LoginPage;
 import ua.gov.nais.pages.applicationPages.BottomBlock;
+import ua.gov.nais.pages.applicationPages.PersonBlock;
 
 public class LoginTest extends BaseTest{
 
@@ -27,6 +28,16 @@ public class LoginTest extends BaseTest{
         BottomBlock bottomBlock = new BottomBlock(driver);
         bottomBlock.pressApplicationDeadlineList();
         bottomBlock.pressTwoBusinessDaysListItem();
+
+        PersonBlock personBlock = new PersonBlock(driver);
+        personBlock.clickPersonBlockButton();
+        personBlock.clickAddPersonButton();
+        personBlock.clickAddPhisycalPersonButton();
+        personBlock.clickRoleList();
+        personBlock.addPersonOfLaw();
+        personBlock.addApplicantItem();
+        personBlock.clickCloseRoleList();
+        personBlock.enterFullName();
     }
 
 }
