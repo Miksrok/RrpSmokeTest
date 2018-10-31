@@ -23,13 +23,16 @@ public class PaymentDetails extends MotherPage {
     @FindBy (xpath = "//li[contains(text(),'Адміністративний збір за надання інформації')]")
     private WebElement feeForProvidingInformationListItem;
 
+    @FindBy (xpath = "//*[@id=\"radiofield-1321-inputEl\"]")
+    private WebElement reasonRadioButton;
+
     @FindBy (xpath = "//input[contains(@id,'1329')]")
     private WebElement reasonList;
 
     @FindBy (xpath = "//li[contains(text(),'за заявою/запитом Національного банку України')]")
     private WebElement atTheRequestOfTheNBUListItem;
 
-    @FindBy (xpath = "//span[contains(text(),'Застосувати')]")
+    @FindBy (xpath = "//span[contains(text(),'Застосувати')]/../..")
     private WebElement applyButton;
 
 
@@ -49,6 +52,10 @@ public class PaymentDetails extends MotherPage {
 
     public void pressFeeForProvidingInformationListItem(){
         ActionsWithElements.init(driver).clickOnElement (feeForProvidingInformationListItem); }
+
+        public void pressReasonRadioButton(){
+        ActionsWithElements.init(driver).clickOnElement(reasonRadioButton);
+        }
 
     public void pressReasonList(){
         ActionsWithElements.init(driver).clickOnElement (reasonList); }

@@ -33,28 +33,33 @@ public class PersonBlock extends MotherPage {
     @FindBy (xpath = "//li[contains(text(), \"Суб’єкт права\")]")
     private WebElement personOfLawListItem;
 
-    @FindBy (xpath = "//*[@id=\"ext-gen2032\"]")
+
+    @FindBy (xpath = "//label[contains(text(), 'Роль')]/../../td[2]/*/*/*/td[2]/div")
     private WebElement closeRoleListButton;
+    //*[@id="ext-gen2379"]
 
     @FindBy (xpath = "//label[contains(text(), 'ПІБ')]/../..//td[2]/input")
     private List<WebElement> fullNameField;
 
     //private By fullNameLocator = By.xpath("//label[contains(text(), 'ПІБ')]/../..//td[2]/input");
 
-    @FindBy (xpath = "//*[@id=\"textfield-1511-inputEl\"]")
-    private WebElement idField;
+    //index = 3
+    @FindBy (xpath = "//label[contains(text(), 'РНОКПП')]/../../td[2]/input")
+    private List<WebElement> idField;
 
-    @FindBy (xpath = "//*[@id=\"textfield-1528-inputEl\"]")
+    @FindBy (xpath = "//label[contains(text(), 'Серія та номер')]/../../td[2]/input")
     private WebElement passportNumberField;
 
-    @FindBy (xpath = "//*[@id=\"datefield-1529-inputEl\"]")
+    @FindBy (xpath = "//label[contains(text(), 'Дата видачі')]/../../td[2]/*/*/*/*/input")
     private WebElement passportDateField;
 
-    @FindBy (xpath = "//*[@id=\"RstCore_searchLocalTipsCombobox-1531-inputEl\"]")
-    private WebElement passportPublisherField;
+    //ind = 0
+    @FindBy (xpath = "//label[contains(text(), 'Видавник')]/../../td[2]/*/*/*/*/input")
+    private List<WebElement> passportPublisherField;
 
-    @FindBy (xpath = "//*[@id=\"button-1536-btnInnerEl\"]")
-    private WebElement okButton;
+    // ind = 2
+    @FindBy (xpath = "//span[contains(text(), 'ОК')]")
+    private List<WebElement> okButton;
 
     public PersonBlock(WebDriver driver) {
         super(driver);
@@ -86,7 +91,7 @@ public class PersonBlock extends MotherPage {
         ActionsWithElements.init(driver).enterTextInToInput(fullNameField.get(3), name);
     }
     public void enterId(String id){
-        ActionsWithElements.init(driver).enterTextInToInput(idField, id);
+        ActionsWithElements.init(driver).enterTextInToInput(idField.get(3), id);
     }
     public void enterPassportNumber(String number){
         ActionsWithElements.init(driver).enterTextInToInput(passportNumberField, number);
@@ -95,10 +100,10 @@ public class PersonBlock extends MotherPage {
         ActionsWithElements.init(driver).enterTextInToInput(passportDateField, date);
     }
     public void enterPassportPublisher(String publisher){
-        ActionsWithElements.init(driver).enterTextInToInput(passportPublisherField, publisher);
+        ActionsWithElements.init(driver).enterTextInToInput(passportPublisherField.get(0), publisher);
     }
     public void pressOkButton(){
-        ActionsWithElements.init(driver).clickOnElement(okButton);
+        ActionsWithElements.init(driver).clickOnElement(okButton.get(2));
     }
 
 
