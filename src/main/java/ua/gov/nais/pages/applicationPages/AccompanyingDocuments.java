@@ -14,10 +14,10 @@ public class AccompanyingDocuments extends MotherPage {
     @FindBy (xpath = "//span[contains(text(),'Супровідні документи')]")
     private WebElement accompanyingDocumentsButton;
 
-    @FindBy (xpath = "//input[contains(@id,'1358')]")
+    @FindBy (xpath = "//span[contains(@id,'1623')]")
     private WebElement addDocumentButton;
 
-    @FindBy (xpath = "//input[contains(@id,'2448')]")
+    @FindBy (xpath = "//div[contains(@id,'2448')]")
     private WebElement documentTypeList;
 
     @FindBy (xpath = "//li[contains(text(),'сертифікат ДАБІ')]")
