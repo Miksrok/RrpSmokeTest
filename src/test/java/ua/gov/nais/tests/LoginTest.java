@@ -2,10 +2,14 @@ package ua.gov.nais.tests;
 
 import org.testng.annotations.Test;
 import ua.gov.nais.models.Person;
+import ua.gov.nais.models.RealEstate;
 import ua.gov.nais.pages.LeftSideMenu;
 import ua.gov.nais.pages.LoginPage;
 import ua.gov.nais.pages.applicationPages.BottomBlock;
 import ua.gov.nais.pages.applicationPages.PersonBlock;
+import ua.gov.nais.pages.applicationPages.RealEstateBlock.AddRealEstateBlock;
+import ua.gov.nais.pages.applicationPages.RealEstateBlock.RealEstateAddressBlock;
+import ua.gov.nais.pages.applicationPages.RealEstateBlock.RealEstateMainBlock;
 
 public class LoginTest extends BaseTest{
 
@@ -45,6 +49,30 @@ public class LoginTest extends BaseTest{
         personBlock.enterPassportDate(person.getPassportDate());
         personBlock.enterPassportPublisher(person.getPassportPublisher());
         personBlock.pressOkButton();
+
+        RealEstateMainBlock realEstateMainBlock  = new RealEstateMainBlock(driver);
+        realEstateMainBlock.clickRealEstateBlook();
+        realEstateMainBlock.clickAddButton();
+        realEstateMainBlock.clicAddRealEstateButton();
+
+        AddRealEstateBlock addRealEstateBlock = new AddRealEstateBlock(driver);
+        addRealEstateBlock.clickTypeList();
+        addRealEstateBlock.selectApartmentItem();
+        addRealEstateBlock.clickOkButton();
+
+        realEstateMainBlock.clickAddButton();
+        realEstateMainBlock.clickAddRealEstateAddressButton();
+
+        RealEstateAddressBlock realEstateAddressBlock = new RealEstateAddressBlock(driver);
+        RealEstate realEstate = new RealEstate();
+        realEstateAddressBlock.enterCity(realEstate.getCity());
+        realEstateAddressBlock.enterStreet(realEstate.getStreet());
+        realEstateAddressBlock.selectBuildingType(realEstate.getBuildingType());
+        realEstateAddressBlock.enterBuildingNumber(realEstate.getBuildingNumber());
+        realEstateAddressBlock.selectApartmentType(realEstate.getApartmentType());
+        realEstateAddressBlock.enterApartmentNumber(realEstate.getApartmentNumber());
+        realEstateAddressBlock.clickOkButton();
+
     }
 
 }

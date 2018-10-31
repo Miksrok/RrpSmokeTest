@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.pages.MotherPage;
 import ua.gov.nais.utilities.ActionsWithElements;
@@ -35,12 +36,10 @@ public class PersonBlock extends MotherPage {
     @FindBy (xpath = "//*[@id=\"ext-gen2032\"]")
     private WebElement closeRoleListButton;
 
-    //@FindBy (xpath = "//*[@id=\"textfield-1510-inputEl\"]")
-   //@FindBy (xpath = "//label[contains(text(), 'ПІБ')]/../..//td[2]/input")
-    //@FindBy (xpath = "//label[contains(text(), 'ПІБ')]")
-    //private List<WebElement> fullNameField = new ArrayList<>();
+    @FindBy (xpath = "//label[contains(text(), 'ПІБ')]/../..//td[2]/input")
+    private List<WebElement> fullNameField;
 
-    private By fullNameLocator = By.xpath("//label[contains(text(), 'ПІБ')]/../..//td[2]/input");
+    //private By fullNameLocator = By.xpath("//label[contains(text(), 'ПІБ')]/../..//td[2]/input");
 
     @FindBy (xpath = "//*[@id=\"textfield-1511-inputEl\"]")
     private WebElement idField;
@@ -83,8 +82,8 @@ public class PersonBlock extends MotherPage {
         ActionsWithElements.init(driver).clickOnElement(closeRoleListButton);
     }
     public void enterFullName(String name){
-        List <WebElement> list = driver.findElements(fullNameLocator);
-        ActionsWithElements.init(driver).enterTextInToInput(list.get(3), name);
+        //List <WebElement> list = driver.findElements(fullNameLocator);
+        ActionsWithElements.init(driver).enterTextInToInput(fullNameField.get(3), name);
     }
     public void enterId(String id){
         ActionsWithElements.init(driver).enterTextInToInput(idField, id);
