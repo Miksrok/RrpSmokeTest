@@ -14,7 +14,7 @@ public class BottomBlock extends MotherPage {
     @FindBy (xpath = "//li[contains(text(),'2 робочі дні')]")
     private WebElement twoBusinessDaysListItem;
 
-    @FindBy (xpath = "//span[contains(text(),'Зареєструвати')]")
+    @FindBy (xpath = "//span[contains(text(),'Зареєструвати')]/../..")
     private WebElement registerButton;
 
     @FindBy (xpath = "//span[contains(text(),'Відмінити')]")

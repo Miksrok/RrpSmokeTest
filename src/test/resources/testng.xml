@@ -8,7 +8,7 @@
 
     <test name="Test Chrome implicitNotVisible212121221">
         <classes>
-            <class name="ua.gov.nais.tests.LoginTest"/>
+            <class name="ua.gov.nais.tests.TestTest"/>
         </classes>
     </test>
 </suite>
