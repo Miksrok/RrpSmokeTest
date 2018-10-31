@@ -12,10 +12,10 @@ public class PaymentDetails extends MotherPage {
     private WebElement paymentdDetailsButton;
 
     @FindBy (xpath = "//*[@id=\"button-1315\"]")
-    private  WebElement additionOfPaymentButton;
+    private WebElement addPaymentButton;
 
     @FindBy (xpath = "//label[contains(text(),'Тип оплати')]")
-    private  WebElement typeOfpaymentList;
+    private WebElement typeOfpaymentList;
 
     @FindBy (xpath = "//li[contains(text(),'Адміністративний збір за реєстраційні дії')]")
     private WebElement feeForRegistrationActionsListItem;
@@ -39,7 +39,7 @@ public class PaymentDetails extends MotherPage {
         ActionsWithElements.init(driver).clickOnElement (paymentdDetailsButton); }
 
     public void pressAdditionOfPaymentButton(){
-        ActionsWithElements.init(driver).clickOnElement (additionOfPaymentButton); }
+        ActionsWithElements.init(driver).clickOnElement (addPaymentButton); }
 
     public void pressTypeOfpaymentList(){
         ActionsWithElements.init(driver).clickOnElement (typeOfpaymentList); }
