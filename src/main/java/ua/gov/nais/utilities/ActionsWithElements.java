@@ -3,6 +3,7 @@ package ua.gov.nais.utilities;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
@@ -48,13 +49,21 @@ public class ActionsWithElements {
      */
     public void clickOnElement(WebElement element) {
         try {
-            webDriverWait20.until(ExpectedConditions.not(ExpectedConditions.invisibilityOf(element)));
-            webDriverWait20.until(ExpectedConditions.elementToBeClickable(element));
-            element.click();
+           // webDriverWait20.until(ExpectedConditions.not(ExpectedConditions.invisibilityOf(element)));
+            //webDriverWait20.until(ExpectedConditions.elementToBeClickable(element));
+            webDriverWait20.until(ExpectedConditions.and(
+                    ExpectedConditions.not(ExpectedConditions.invisibilityOf(element)),
+                    ExpectedConditions.elementToBeClickable(element)
+            ));
+
             String info = new String("натиснуто".getBytes("UTF-8"));
+            String el = element.getTagName();
+
+            element.click();
+
             Reporter.log(String.format("[%-12s] ACTION: %s",
                     LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME),
-                    element.getTagName()+" "+info));
+                    el+" "+info));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -62,6 +71,24 @@ public class ActionsWithElements {
            // webDriver.close();
         }
     }
+    public void clicWithOffset(WebElement element){
+        Actions action = new Actions(webDriver) ;
+
+        action.moveToElement(element, 120, 0)
+                .click()
+                .build()
+                .perform();
+    }
+    public void clickAfterDoubleMove(WebElement first, WebElement second){
+        Actions action = new Actions(webDriver) ;
+        action.moveToElement(first)
+                .pause(1)
+                .moveToElement(second)
+                .click()
+                .build()
+                .perform();
+    }
+
 
     public static synchronized ActionsWithElements init(WebDriver driver){
         if (obj == null){

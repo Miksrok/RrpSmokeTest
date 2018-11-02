@@ -1,15 +1,11 @@
-package ua.gov.nais.pages.applicationPages;
+package ua.gov.nais.pages.createApplicationPages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.pages.MotherPage;
 import ua.gov.nais.utilities.ActionsWithElements;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class PersonBlock extends MotherPage {

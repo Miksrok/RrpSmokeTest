@@ -1,6 +1,5 @@
-package ua.gov.nais.pages.applicationPages.RealEstateBlock;
+package ua.gov.nais.pages.createApplicationPages.RealEstateBlock;
 
-import com.sun.tools.sjavac.comp.dependencies.PublicApiCollector;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

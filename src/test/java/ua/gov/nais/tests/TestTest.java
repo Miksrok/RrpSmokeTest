@@ -1,14 +1,19 @@
 package ua.gov.nais.tests;
 
+import org.graalvm.compiler.nodes.InliningLog;
 import org.testng.annotations.Test;
 import ua.gov.nais.models.Person;
 import ua.gov.nais.models.RealEstate;
 import ua.gov.nais.pages.LeftSideMenu;
 import ua.gov.nais.pages.LoginPage;
-import ua.gov.nais.pages.applicationPages.*;
-import ua.gov.nais.pages.applicationPages.RealEstateBlock.AddRealEstateBlock;
-import ua.gov.nais.pages.applicationPages.RealEstateBlock.RealEstateAddressBlock;
-import ua.gov.nais.pages.applicationPages.RealEstateBlock.RealEstateMainBlock;
+import ua.gov.nais.pages.applicationPage.ApplicationPage;
+import ua.gov.nais.pages.applicationPage.makeDecisionPage.MakeDecisionPage;
+import ua.gov.nais.pages.createApplicationPages.*;
+import ua.gov.nais.pages.createApplicationPages.RealEstateBlock.AddRealEstateBlock;
+import ua.gov.nais.pages.createApplicationPages.RealEstateBlock.RealEstateAddressBlock;
+import ua.gov.nais.pages.createApplicationPages.RealEstateBlock.RealEstateMainBlock;
+import ua.gov.nais.pages.decisionPage.DecisionPage;
+import ua.gov.nais.pages.openSectionPage.EnterDecisionNumberPage;
 
 public class TestTest extends BaseTest {
 
@@ -113,6 +118,42 @@ public class TestTest extends BaseTest {
         bottomBlock.pressTwoBusinessDaysListItem();
         bottomBlock.pressRegisterButton();
 
+        //=====================================
+
+        ApplicationPage applicationPage = new ApplicationPage(driver);
+        applicationPage.closeWindow();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        //applicationPage.clickPerformTheActionButton();
+        applicationPage.select();
+
+        //===========================
+
+        MakeDecisionPage makeDecisionPage = new MakeDecisionPage(driver);
+        makeDecisionPage.clickTypeList();
+        makeDecisionPage.selectTypeFromList();
+        makeDecisionPage.clickSummitButton();
+
+        DecisionPage decisionPage = new DecisionPage(driver);
+        decisionPage.closeDocumentPage();
+        String number = decisionPage.getDecisionNumber();
+        //System.out.println(number);
+
+
+        leftSideMenu.clickSectionRegistrationButton();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        leftSideMenu.clickCreateSectionButton();
+
+        // ================================
+        EnterDecisionNumberPage enterDecisionNumberPage = new EnterDecisionNumberPage(driver);
+        enterDecisionNumberPage.enterDecisionNumber(number);
     }
 
 }

@@ -5,11 +5,11 @@ import ua.gov.nais.models.Person;
 import ua.gov.nais.models.RealEstate;
 import ua.gov.nais.pages.LeftSideMenu;
 import ua.gov.nais.pages.LoginPage;
-import ua.gov.nais.pages.applicationPages.BottomBlock;
-import ua.gov.nais.pages.applicationPages.PersonBlock;
-import ua.gov.nais.pages.applicationPages.RealEstateBlock.AddRealEstateBlock;
-import ua.gov.nais.pages.applicationPages.RealEstateBlock.RealEstateAddressBlock;
-import ua.gov.nais.pages.applicationPages.RealEstateBlock.RealEstateMainBlock;
+import ua.gov.nais.pages.createApplicationPages.BottomBlock;
+import ua.gov.nais.pages.createApplicationPages.PersonBlock;
+import ua.gov.nais.pages.createApplicationPages.RealEstateBlock.AddRealEstateBlock;
+import ua.gov.nais.pages.createApplicationPages.RealEstateBlock.RealEstateAddressBlock;
+import ua.gov.nais.pages.createApplicationPages.RealEstateBlock.RealEstateMainBlock;
 
 public class LoginTest extends BaseTest{
 

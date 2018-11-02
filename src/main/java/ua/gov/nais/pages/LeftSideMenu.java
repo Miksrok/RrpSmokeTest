@@ -24,6 +24,12 @@ public class LeftSideMenu extends MotherPage{
     @FindBy (xpath = "//span[text() = 'заява про реєстрацію обтяження']")
     private WebElement arrestButton;
 
+    @FindBy (xpath = "//span[text() = 'Реєстрація та обробка розділів']")
+    private WebElement sectionRegistrationButton;
+
+    @FindBy (xpath = "//span[text() = 'Відкрити розділ']")
+    private WebElement createSectionButton;
+
 
     public LeftSideMenu(WebDriver driver) {
         super(driver);
@@ -37,6 +43,12 @@ public class LeftSideMenu extends MotherPage{
     }
     public void pressOwnershipButton(){
         ActionsWithElements.init(driver).clickOnElement (ownershipButton);
+    }
+    public void clickSectionRegistrationButton(){
+        ActionsWithElements.init(driver).clickOnElement(sectionRegistrationButton);
+    }
+    public void clickCreateSectionButton(){
+        ActionsWithElements.init(driver).clickOnElement(createSectionButton);
     }
 
 }
