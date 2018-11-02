@@ -53,7 +53,7 @@ public class LoginPage extends MotherPage{
     public void enterKeyInformation(){
 
         try {
-            Thread.sleep(15000);
+            Thread.sleep(10000);
             Robot robot = new Robot();
 
             //go to password field

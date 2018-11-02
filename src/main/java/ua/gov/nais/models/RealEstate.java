@@ -1,5 +1,8 @@
 package ua.gov.nais.models;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class RealEstate {
 
     private String city;
@@ -13,9 +16,13 @@ public class RealEstate {
         this.city = "м.Київ";
         this.street = "Антоновича";
         this.buildingType = "будинок";
-        this.buildingNumber = "999";
         this.apartmentType = "квартира";
         this.apartmentNumber = "999";
+    }
+    {
+        Date date = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("MMddHHmmss");
+        this.buildingNumber = format.format(date);
     }
 
     public String getCity() {

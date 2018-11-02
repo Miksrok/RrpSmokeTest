@@ -1,4 +1,4 @@
-package ua.gov.nais.pages.applicationPages;
+package ua.gov.nais.pages.createApplicationPages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

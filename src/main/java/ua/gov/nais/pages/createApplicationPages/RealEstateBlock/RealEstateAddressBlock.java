@@ -1,4 +1,4 @@
-package ua.gov.nais.pages.applicationPages.RealEstateBlock;
+package ua.gov.nais.pages.createApplicationPages.RealEstateBlock;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
