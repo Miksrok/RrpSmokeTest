@@ -44,7 +44,7 @@ public class RealEstateAddressBlock extends MotherPage {
     public void enterCity(String city){
         ActionsWithElements.init(driver).enterTextInToInput(cityField.get(3), city);
         try {
-            Thread.sleep(1000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -52,7 +52,7 @@ public class RealEstateAddressBlock extends MotherPage {
     }
     public void enterStreet(String street){
         try {
-            Thread.sleep(1000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -66,11 +66,11 @@ public class RealEstateAddressBlock extends MotherPage {
     }
     public void selectBuildingType(String type){
         ActionsWithElements.init(driver).enterTextInToInput(buildingTypeList.get(3), type);
-        try {
+        /*try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
         buildingTypeList.get(3).sendKeys(Keys.ENTER);
     }
     public void enterBuildingNumber(String number){
@@ -79,11 +79,11 @@ public class RealEstateAddressBlock extends MotherPage {
     }
     public void selectApartmentType(String type){
         ActionsWithElements.init(driver).enterTextInToInput(apartmentTypeList.get(2), type);
-        try {
+       /* try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
         apartmentTypeList.get(2).sendKeys(Keys.ENTER);
     }
     public void enterApartmentNumber(String number){

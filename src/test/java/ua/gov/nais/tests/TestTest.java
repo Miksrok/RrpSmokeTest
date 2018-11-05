@@ -4,6 +4,7 @@ import org.graalvm.compiler.nodes.InliningLog;
 import org.testng.annotations.Test;
 import ua.gov.nais.models.Person;
 import ua.gov.nais.models.RealEstate;
+import ua.gov.nais.pages.ErrorMessagePage;
 import ua.gov.nais.pages.LeftSideMenu;
 import ua.gov.nais.pages.LoginPage;
 import ua.gov.nais.pages.applicationPage.ApplicationPage;
@@ -14,6 +15,7 @@ import ua.gov.nais.pages.createApplicationPages.RealEstateBlock.RealEstateAddres
 import ua.gov.nais.pages.createApplicationPages.RealEstateBlock.RealEstateMainBlock;
 import ua.gov.nais.pages.decisionPage.DecisionPage;
 import ua.gov.nais.pages.openSectionPage.EnterDecisionNumberPage;
+import ua.gov.nais.pages.openSectionPage.EnterRealEstateAddressPage;
 
 public class TestTest extends BaseTest {
 
@@ -26,6 +28,11 @@ public class TestTest extends BaseTest {
         loginPage.enterPassword();
         loginPage.pressConfirmationButtn();
         loginPage.enterKeyInformation();
+
+        ErrorMessagePage errorMessagePage = new ErrorMessagePage(driver);
+        if (errorMessagePage.isError()){
+            test();
+        }
 
         LeftSideMenu leftSideMenu = new LeftSideMenu(driver);
         leftSideMenu.pressRegistrationAndProcessingButton();
@@ -90,11 +97,11 @@ public class TestTest extends BaseTest {
         paymentDetails.pressReasonRadioButton();
         paymentDetails.pressReasonList();
         paymentDetails.pressAtTheRequestOfTheNBUListItem();
-        try {
+       /* try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
         paymentDetails.pressApplyButton();
 
         paymentDetails.pressAdditionOfPaymentButton();
@@ -154,6 +161,26 @@ public class TestTest extends BaseTest {
         // ================================
         EnterDecisionNumberPage enterDecisionNumberPage = new EnterDecisionNumberPage(driver);
         enterDecisionNumberPage.enterDecisionNumber(number);
+        enterDecisionNumberPage.checkInfo();
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        enterDecisionNumberPage.addInfoFromApplication();
+        enterDecisionNumberPage.clickContinueButton();
+        enterDecisionNumberPage.clickContinueButton();
+
+
+        EnterRealEstateAddressPage enterRealEstateAddressPage  = new EnterRealEstateAddressPage(driver);
+        enterRealEstateAddressPage.clickOpenRealEstateBlockButton();
+        enterRealEstateAddressPage.enterKoatuu("80000");
+        enterRealEstateAddressPage.clickConfirmKoatuuButton();
+        enterRealEstateAddressPage.openIsThisRealEstateFieldList();
+        enterRealEstateAddressPage.selectYesListItem();
+        enterRealEstateAddressPage.clickOkButton();
+        enterRealEstateAddressPage.clickSectionRegistrationButton();
+        enterRealEstateAddressPage.pressDoNotGoToApplicationButton();
     }
 
 }
