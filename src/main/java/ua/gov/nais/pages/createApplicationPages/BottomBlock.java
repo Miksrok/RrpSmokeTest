@@ -33,6 +33,6 @@ public class BottomBlock extends MotherPage {
     public void pressRegisterButton(){
         ActionsWithElements.init(driver).clickOnElement (registerButton); }
 
-    public void pressAalterButton(){
+    public void pressAlterButton(){
         ActionsWithElements.init(driver).clickOnElement (alterButton); }
 }
