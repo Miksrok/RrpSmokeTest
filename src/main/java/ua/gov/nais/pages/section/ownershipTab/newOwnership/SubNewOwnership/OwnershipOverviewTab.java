@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.pages.MotherPage;
 import ua.gov.nais.utilities.ActionsWithElements;
 
-public class OwnershipOverview extends MotherPage {
+public class OwnershipOverviewTab extends MotherPage {
 
     @FindBy(xpath = "//*[@name=\"dcPrType\"]")
     private WebElement ownershipOverviewList;
@@ -14,7 +14,7 @@ public class OwnershipOverview extends MotherPage {
     @FindBy (xpath = "//li[contains(text(), 'приватна')]")
     private WebElement privateOwnershipItem;
 
-    public OwnershipOverview(WebDriver driver) {super(driver);}
+    public OwnershipOverviewTab(WebDriver driver) {super(driver);}
 
     public void pressOwnershipOverviewList(){
         ActionsWithElements.init(driver).clickOnElement (ownershipOverviewList); }

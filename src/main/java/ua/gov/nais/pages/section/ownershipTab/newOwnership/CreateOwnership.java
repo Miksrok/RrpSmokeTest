@@ -19,7 +19,7 @@ public class CreateOwnership extends MotherPage {
 
     public CreateOwnership(WebDriver driver) { super(driver); }
 
-    public void enteriIndexNumberOfSolutionField(String number){
+    public void enterIndexNumberOfSolutionField(String number){
         ActionsWithElements.init(driver).enterTextInToInput(indexNumberOfSolutionField, number);}
 
     public void pressVerifyButton(){
