@@ -8,7 +8,7 @@ import ua.gov.nais.utilities.ActionsWithElements;
 
 public class OwnershipOverviewTab extends MotherPage {
 
-    @FindBy(xpath = "//*[@name=\"dcPrType\"]")
+    @FindBy(xpath = "//*[@name=\"dcPrType\"]/../../td[2]/div")
     private WebElement ownershipOverviewList;
 
     @FindBy (xpath = "//li[contains(text(), 'приватна')]")

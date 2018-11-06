@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
         <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="tests" thread-count="10" verbose="0" configfailurepolicy="skip">
+<suite name="Suite"><!--parallel="tests" thread-count="1"--><!-- verbose="0" configfailurepolicy="skip"-->
     <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     </listeners>
-
-    <test name="Test Chrome implicitNotVisible212121221">
+    <test name="First long test">
         <classes>
             <class name="ua.gov.nais.tests.TestTest"/>
+        </classes>
+    </test>
+    <test name="Second long test">
+        <classes>
+            <class name="ua.gov.nais.tests.SecondTest"/>
         </classes>
     </test>
 </suite>
