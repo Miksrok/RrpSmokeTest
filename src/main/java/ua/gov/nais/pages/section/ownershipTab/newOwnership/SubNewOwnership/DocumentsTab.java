@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.pages.MotherPage;
 import ua.gov.nais.utilities.ActionsWithElements;
 
-public class Documents extends MotherPage {
+public class DocumentsTab extends MotherPage {
 
     @FindBy (xpath = "(//span[text() = 'Додати документ з заяви'])[2]")
     private WebElement documentsButton;
@@ -23,7 +23,7 @@ public class Documents extends MotherPage {
     @FindBy (xpath = "//span[text() ='Ні']")
     private WebElement noButton;
 
-    public Documents(WebDriver driver) {super(driver);}
+    public DocumentsTab(WebDriver driver) {super(driver);}
 
     public void pressDocumentsButton(){
         ActionsWithElements.init(driver).clickOnElement (documentsButton); }

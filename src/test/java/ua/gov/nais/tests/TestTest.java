@@ -1,6 +1,5 @@
 package ua.gov.nais.tests;
 
-import org.graalvm.compiler.nodes.InliningLog;
 import org.testng.annotations.Test;
 import ua.gov.nais.models.Person;
 import ua.gov.nais.models.RealEstate;
@@ -18,6 +17,10 @@ import ua.gov.nais.pages.openSectionPage.EnterDecisionNumberPage;
 import ua.gov.nais.pages.openSectionPage.EnterRealEstateAddressPage;
 import ua.gov.nais.pages.section.Section;
 import ua.gov.nais.pages.section.ownershipTab.Ownership;
+import ua.gov.nais.pages.section.ownershipTab.newOwnership.CreateOwnership;
+import ua.gov.nais.pages.section.ownershipTab.newOwnership.SubNewOwnership.DocumentsTab;
+import ua.gov.nais.pages.section.ownershipTab.newOwnership.SubNewOwnership.OwnershipOverviewTab;
+import ua.gov.nais.pages.section.ownershipTab.newOwnership.SubNewOwnership.SubjectTab;
 
 public class TestTest extends BaseTest {
 
@@ -190,6 +193,28 @@ public class TestTest extends BaseTest {
         Ownership ownership = new Ownership(driver);
         ownership.pressRegistrationList();
         ownership.pressNewOwnershipListItem();
+
+        CreateOwnership createOwnership = new CreateOwnership(driver);
+        createOwnership.enterIndexNumberOfSolutionField(number);
+        createOwnership.pressVerifyButton();
+        createOwnership.pressContinueBotton();
+
+        OwnershipOverviewTab ownershipOverviewTab = new OwnershipOverviewTab(driver);
+        ownershipOverviewTab.pressOwnershipOverviewList();
+        ownershipOverviewTab.pressPrivateOwnershipItem();
+
+        SubjectTab subjectTab = new SubjectTab(driver);
+        subjectTab.pressSubjectBotton();
+        subjectTab.pressAddDocFromStatementBotton();
+        subjectTab.pressFirstSubjectCheckBox();
+        subjectTab.pressOkBotton();
+
+        DocumentsTab documentsTab = new DocumentsTab(driver);
+        documentsTab.pressDocumentsButton();
+        documentsTab.pressFirstDocCheckBox();
+        documentsTab.pressOkDocBotton();
+        documentsTab.pressRegisterOwnershipButton();
+        documentsTab.pressNoButton();
 
 
     }

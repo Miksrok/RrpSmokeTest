@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.pages.MotherPage;
 import ua.gov.nais.utilities.ActionsWithElements;
 
-public class Subject extends MotherPage {
+public class SubjectTab extends MotherPage {
 
     @FindBy(xpath = "//span[contains(text(),\"Суб’єкт\")]")
     private WebElement subjectBotton;
@@ -20,7 +20,7 @@ public class Subject extends MotherPage {
     @FindBy(xpath = "(//span[contains(text(),\"ОК\")])[3]")
     private WebElement okSubjBotton;
 
-    public Subject(WebDriver driver) {super(driver);}
+    public SubjectTab(WebDriver driver) {super(driver);}
 
     public void pressSubjectBotton(){
         ActionsWithElements.init(driver).clickOnElement (subjectBotton); }
