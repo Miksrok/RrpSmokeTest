@@ -13,8 +13,7 @@ public abstract class MotherPage {
 
     public MotherPage(WebDriver driver){
         this.driver = driver;
-        wait = new WebDriverWait(driver, 30);
+        wait = new WebDriverWait(driver, 5);
         PageFactory.initElements(driver, this);
     }
-
 }

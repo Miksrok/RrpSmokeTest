@@ -11,7 +11,7 @@ public class Section extends MotherPage {
     @FindBy(xpath = "(//span[contains(text(),'Оновити')])[1]")
     private WebElement updateButton;
 
-    @FindBy(xpath = "//span[text() = 'Право власності']")
+    @FindBy(xpath = "//span[text() = 'Право власності']/../../..")
     private WebElement ownershipButton;
 
     public Section(WebDriver driver) {super(driver); }
@@ -21,7 +21,7 @@ public class Section extends MotherPage {
 
     public void pressOwnershipButton(){
         try {
-            Thread.sleep(1500);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
