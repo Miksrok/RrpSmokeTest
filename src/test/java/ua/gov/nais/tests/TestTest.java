@@ -46,7 +46,7 @@ public class TestTest extends BaseTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        leftSideMenu.pressApplicationRegistrationButton();
+               leftSideMenu.pressApplicationRegistrationButton();
         leftSideMenu.pressOwnershipButton();
 
         StatementDetails statementDetails = new StatementDetails(driver);
@@ -210,6 +210,7 @@ public class TestTest extends BaseTest {
         subjectTab.pressOkBotton();
 
         DocumentsTab documentsTab = new DocumentsTab(driver);
+        documentsTab.openDocumentTab();
         documentsTab.pressDocumentsButton();
         documentsTab.pressFirstDocCheckBox();
         documentsTab.pressOkDocBotton();

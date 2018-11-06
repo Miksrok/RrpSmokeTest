@@ -14,7 +14,7 @@ public class CreateOwnership extends MotherPage {
     @FindBy (xpath = "(//label[text() = 'Індексний номер рішення']/../../../../../a)[1]")
     private WebElement verifyButton;
 
-    @FindBy (xpath = "(//span[contains(text(), 'Продовжити')])[1]")
+    @FindBy (xpath = "//span[text() = 'Продовжити >>']/../../..")
     private  WebElement continueBotton;
 
     public CreateOwnership(WebDriver driver) { super(driver); }
@@ -26,6 +26,11 @@ public class CreateOwnership extends MotherPage {
         ActionsWithElements.init(driver).clickOnElement (verifyButton); }
 
     public void pressContinueBotton(){
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         ActionsWithElements.init(driver).clickOnElement (continueBotton); }
 
 }
