@@ -8,18 +8,20 @@ import ua.gov.nais.utilities.ActionsWithElements;
 
 public class Ownership extends MotherPage {
 
-    @FindBy (xpath = "(//span[contains(text(), 'Реєстрація')])[4]")
+    @FindBy (xpath = "//span[text() = 'Реєстрація']")
     private WebElement registrationList;
 
-    @FindBy (xpath = "//span[contains(text(), 'новий')]")
+    @FindBy (xpath = "//span[text() = 'новий']")
     private WebElement newOwnershipListItem;
 
     public Ownership(WebDriver driver) {super(driver); }
 
     public void pressRegistrationList(){
-        ActionsWithElements.init(driver).clickOnElement (registrationList); }
+        ActionsWithElements.init(driver).clicWithOffset(registrationList);
+    }
 
     public void pressNewOwnershipListItem(){
-        ActionsWithElements.init(driver).clickOnElement (newOwnershipListItem); }
+        ActionsWithElements.init(driver).clickOnElement (newOwnershipListItem);
+    }
 
 }
