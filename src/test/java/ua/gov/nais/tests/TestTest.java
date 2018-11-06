@@ -16,6 +16,8 @@ import ua.gov.nais.pages.createApplicationPages.RealEstateBlock.RealEstateMainBl
 import ua.gov.nais.pages.decisionPage.DecisionPage;
 import ua.gov.nais.pages.openSectionPage.EnterDecisionNumberPage;
 import ua.gov.nais.pages.openSectionPage.EnterRealEstateAddressPage;
+import ua.gov.nais.pages.section.Section;
+import ua.gov.nais.pages.section.ownershipTab.Ownership;
 
 public class TestTest extends BaseTest {
 
@@ -181,6 +183,15 @@ public class TestTest extends BaseTest {
         enterRealEstateAddressPage.clickOkButton();
         enterRealEstateAddressPage.clickSectionRegistrationButton();
         enterRealEstateAddressPage.pressDoNotGoToApplicationButton();
+
+        Section section = new Section(driver);
+        section.pressOwnershipButton();
+
+        Ownership ownership = new Ownership(driver);
+        ownership.pressRegistrationList();
+        ownership.pressNewOwnershipListItem();
+
+
     }
 
 }

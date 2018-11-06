@@ -11,13 +11,13 @@ public class StatementDetails extends MotherPage {
     @FindBy (xpath = "//span[contains(text(),'Відомості')]")
     private WebElement statementDetailsButton;
 
-    @FindBy (xpath = "//div[contains(@id,'1840')]")
+    @FindBy (xpath = "//label[text() = 'Вид реєстрації']/../../td[2]/*/*/*/*/input")
     private WebElement typeOfRegistrationList;
 
     @FindBy (xpath = "//li[contains(text(),'виникнення')]")
     private WebElement typeOfRegistrationListItem;
 
-    @FindBy (xpath = "//div[contains(@id,'1852')]")
+    @FindBy (xpath = "//label[text() = 'Форма власності']/../../td[2]/*/*/*/*/input")
     private WebElement ownershipList;
 
     @FindBy (xpath = "//li[contains(text(),'державна')]")

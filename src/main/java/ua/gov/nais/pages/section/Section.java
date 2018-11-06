@@ -11,7 +11,7 @@ public class Section extends MotherPage {
     @FindBy(xpath = "(//span[contains(text(),'Оновити')])[1]")
     private WebElement updateButton;
 
-    @FindBy(xpath = "//span[contains(text(),'Право власності')]")
+    @FindBy(xpath = "//span[text() = 'Право власності']")
     private WebElement ownershipButton;
 
     public Section(WebDriver driver) {super(driver); }
@@ -20,6 +20,11 @@ public class Section extends MotherPage {
         ActionsWithElements.init(driver).clickOnElement (updateButton); }
 
     public void pressOwnershipButton(){
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         ActionsWithElements.init(driver).clickOnElement (ownershipButton); }
 
 
