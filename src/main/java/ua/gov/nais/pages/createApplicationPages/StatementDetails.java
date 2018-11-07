@@ -34,6 +34,9 @@ public class StatementDetails extends MotherPage {
     @FindBy (xpath = "//li[contains(text(),'право володіння')]")
     private WebElement otherOwnersipListItem;
 
+    //=====================
+
+
     public StatementDetails(WebDriver driver) { super(driver); }
 
     public void pressStatementDetailsButton(){
@@ -57,5 +60,9 @@ public class StatementDetails extends MotherPage {
         public void pressOtherOwnershipListItem(){
             ActionsWithElements.init(driver).clickOnElement(otherOwnersipListItem);
         }
+
+
+
+
 
 }

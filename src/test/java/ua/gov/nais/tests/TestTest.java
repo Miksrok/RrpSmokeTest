@@ -16,6 +16,9 @@ import ua.gov.nais.pages.decisionPage.DecisionPage;
 import ua.gov.nais.pages.openSectionPage.EnterDecisionNumberPage;
 import ua.gov.nais.pages.openSectionPage.EnterRealEstateAddressPage;
 import ua.gov.nais.pages.section.Section;
+import ua.gov.nais.pages.section.arrestTab.Arrest;
+import ua.gov.nais.pages.section.arrestTab.newArrest.CreatArrest;
+import ua.gov.nais.pages.section.arrestTab.newArrest.subNewArrest.ArrestOverviewTab;
 import ua.gov.nais.pages.section.ownershipTab.Ownership;
 import ua.gov.nais.pages.section.ownershipTab.newOwnership.CreateOwnership;
 import ua.gov.nais.pages.section.ownershipTab.newOwnership.SubNewOwnership.DocumentsTab;
@@ -188,18 +191,32 @@ public class TestTest extends BaseTest {
         enterRealEstateAddressPage.pressDoNotGoToApplicationButton();
 
         Section section = new Section(driver);
-        section.pressOwnershipButton();
+        //section.pressOwnershipButton();
+        section.pressArrestButton();
 
-        Ownership ownership = new Ownership(driver);
+        /*Ownership ownership = new Ownership(driver);
         ownership.pressRegistrationList();
-        ownership.pressNewOwnershipListItem();
+        ownership.pressNewOwnershipListItem();*/
 
-        CreateOwnership createOwnership = new CreateOwnership(driver);
+        Arrest arrest = new Arrest(driver);
+        arrest.pressRegistrationList();
+        arrest.pressNewArresrListItem();
+
+        /*CreateOwnership createOwnership = new CreateOwnership(driver);
         createOwnership.enterIndexNumberOfSolutionField(number);
         createOwnership.pressVerifyButton();
-        createOwnership.pressContinueBotton();
+        createOwnership.pressContinueBotton();*/
 
-        OwnershipOverviewTab ownershipOverviewTab = new OwnershipOverviewTab(driver);
+        CreatArrest creatArrest = new CreatArrest(driver);
+        creatArrest.enterIndexNumberOfSolutionField(number);
+        creatArrest.pressVerifyButton();
+        creatArrest.pressContinueBotton();
+
+        ArrestOverviewTab arrestOverviewTab = new ArrestOverviewTab(driver);
+        arrestOverviewTab.pressArrestOverviewList();
+        arrestOverviewTab.pressArrestTypeListItem();
+
+        /*OwnershipOverviewTab ownershipOverviewTab = new OwnershipOverviewTab(driver);
         ownershipOverviewTab.pressOwnershipOverviewList();
         ownershipOverviewTab.pressPrivateOwnershipItem();
 
@@ -216,7 +233,7 @@ public class TestTest extends BaseTest {
         documentsTab.pressOkDocBotton();
         documentsTab.pressRegisterOwnershipButton();
         documentsTab.pressNoButton();
-
+*/
 
     }
 
