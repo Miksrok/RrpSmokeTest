@@ -1,16 +1,25 @@
 package ua.gov.nais.utilities;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 import org.testng.Reporter;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 
 public class EventHandler implements WebDriverEventListener {
+
+    private WebDriver driver;
+
+    public EventHandler (WebDriver driver){
+        this.driver = driver;
+    }
+
     @Override
     public void beforeAlertAccept(WebDriver webDriver) {
 
@@ -125,6 +134,27 @@ public class EventHandler implements WebDriverEventListener {
 
     @Override
     public void onException(Throwable throwable, WebDriver webDriver) {
+
+
+     /*  System.setProperty("org.uncommons.reportng.escape-output", "false");
+        String timeStamp;
+        File screenShotName;
+        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//The below method will save the screen shot in d drive with name "screenshot.png"
+        timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+        //screenShotName = new File("target\\surefire-reports\\screens\\"+timeStamp+".png");
+       screenShotName = new File("D:\\MyTest\\Screenshots\\"+timeStamp+".png");
+        try {
+            FileUtils.copyFile(scrFile, screenShotName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //String filePath = screenShotName.toString();
+        //String path = "<img src="\"file://"" alt="\"\"/" />";
+        Reporter.log("<br><a href='D:\\MyTest\\Screenshots\\"+timeStamp+".png'>text</a>");
+
+        driver.close();*/
 
     }
 

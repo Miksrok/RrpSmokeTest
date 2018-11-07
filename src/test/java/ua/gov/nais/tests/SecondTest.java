@@ -109,8 +109,6 @@ public class SecondTest extends BaseTest{
         bottomBlock.pressApplicationDeadlineList();
         bottomBlock.pressTwoBusinessDaysListItem();
         bottomBlock.pressRegisterButton();
-
-
     }
 
 }

@@ -10,9 +10,9 @@
             <class name="ua.gov.nais.tests.TestTest"/>
         </classes>
     </test>
-    <test name="Second long test">
+   <!-- <test name="Second long test">
         <classes>
             <class name="ua.gov.nais.tests.SecondTest"/>
         </classes>
-    </test>
+    </test>-->
 </suite>

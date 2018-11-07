@@ -37,7 +37,7 @@ public class BaseTest {
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
         driver = new EventFiringWebDriver(new ChromeDriver(options));
-        driver.register(new EventHandler());
+        driver.register(new EventHandler(driver));
 
         //driver = new ChromeDriver(options);
 
