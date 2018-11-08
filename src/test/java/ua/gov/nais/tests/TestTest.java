@@ -73,11 +73,15 @@ public class TestTest extends BaseTest {
 
         RealEstateAddressBlock realEstateAddressBlock = new RealEstateAddressBlock(driver);
         RealEstate realEstate = new RealEstate();
-        realEstateAddressBlock.enterCity(realEstate.getCity());
+        realEstateAddressBlock.typeCityName(realEstate.getCity());
+        realEstateAddressBlock.selectCity();
         realEstateAddressBlock.enterStreet(realEstate.getStreet());
-        realEstateAddressBlock.selectBuildingType(realEstate.getBuildingType());
+        realEstateAddressBlock.selectStreetName();
+        realEstateAddressBlock.enterBuildingType(realEstate.getBuildingType());
+        realEstateAddressBlock.selectBuildingType();
         realEstateAddressBlock.enterBuildingNumber(realEstate.getBuildingNumber());
-        realEstateAddressBlock.selectApartmentType(realEstate.getApartmentType());
+        realEstateAddressBlock.enterApartmentType(realEstate.getApartmentType());
+        realEstateAddressBlock.selectApartmentType();
         realEstateAddressBlock.enterApartmentNumber(realEstate.getApartmentNumber());
         realEstateAddressBlock.clickOkButton();
 //======================
