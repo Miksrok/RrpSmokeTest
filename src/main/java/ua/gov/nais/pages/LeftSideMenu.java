@@ -47,6 +47,9 @@ public class LeftSideMenu extends MotherPage{
     public void pressOtherOwnershipButton(){
         ActionsWithElements.init(driver).clickOnElement(otherOwnershipButton);
     }
+    public void pressArrestButton(){
+        ActionsWithElements.init(driver).clickOnElement(arrestButton);
+    }
     public void clickSectionRegistrationButton(){
         ActionsWithElements.init(driver).clickOnElement(sectionRegistrationButton);
     }

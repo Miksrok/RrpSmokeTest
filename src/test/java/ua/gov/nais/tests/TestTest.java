@@ -34,7 +34,7 @@ public class TestTest extends BaseTest {
         loginPage.openLoginPage();
         loginPage.enterLogin();
         loginPage.enterPassword();
-        loginPage.pressConfirmationButtn();
+        loginPage.pressConfirmationButton();
         loginPage.enterKeyInformation();
 
         ErrorMessagePage errorMessagePage = new ErrorMessagePage(driver);

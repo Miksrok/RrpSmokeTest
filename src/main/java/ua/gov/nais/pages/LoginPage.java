@@ -44,7 +44,7 @@ public class LoginPage extends MotherPage{
         ActionsWithElements.init(driver).enterTextInToInput(passwordField, PASSWORD);
         /*passwordField.sendKeys(PASSWORD);*/
     }
-    public void pressConfirmationButtn(){
+    public void pressConfirmationButton(){
         ActionsWithElements.init(driver).clickOnElement(confirmationButton);
         /*confirmationButton.click();*/
     }
