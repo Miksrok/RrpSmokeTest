@@ -19,9 +19,8 @@ public class SubjectTab extends MotherPage {
 
 
    // @FindBy(xpath = "//span[(text() = \"ОК\")]")
-=======
-    @FindBy(xpath = "//span[text() = 'ОК']/../../..")
 
+    @FindBy(xpath = "//span[text() = 'ОК']/../../..")
     private WebElement okSubjBotton;
 
     public SubjectTab(WebDriver driver) {super(driver);}
