@@ -14,6 +14,9 @@ public class Section extends MotherPage {
     @FindBy(xpath = "//span[text() = 'Право власності']/../../..")
     private WebElement ownershipButton;
 
+    @FindBy(xpath = "//span[text() = 'Інші речові права']/../../..")
+    private WebElement otherOwnershipButton;
+
     public Section(WebDriver driver) {super(driver); }
 
     public void pressUpdateButton(){
@@ -25,6 +28,14 @@ public class Section extends MotherPage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        ActionsWithElements.init(driver).clickOnElement (ownershipButton); }
+
+    public void pressOtherOwnershipButton(){
+/*        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
         ActionsWithElements.init(driver).clickOnElement (ownershipButton); }
 
 

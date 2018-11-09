@@ -207,7 +207,7 @@ public class TestTest extends BaseTest {
         subjectTab.pressSubjectBotton();
         subjectTab.pressAddDocFromStatementBotton();
         subjectTab.pressFirstSubjectCheckBox();
-        subjectTab.pressOkBotton();
+        subjectTab.pressOkButton();
 
         DocumentsTab documentsTab = new DocumentsTab(driver);
         documentsTab.pressDocumentsButton();
@@ -215,7 +215,6 @@ public class TestTest extends BaseTest {
         documentsTab.pressOkDocBotton();
         documentsTab.pressRegisterOwnershipButton();
         documentsTab.pressNoButton();
-
 
     }
 
