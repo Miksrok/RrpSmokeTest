@@ -21,4 +21,5 @@ public class OwnershipOverviewTab extends MotherPage {
 
     public void pressPrivateOwnershipItem(){
         ActionsWithElements.init(driver).clickOnElement (privateOwnershipItem); }
+
 }
