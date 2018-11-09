@@ -44,7 +44,7 @@ public class LoginPage extends MotherPage{
         ActionsWithElements.init(driver).enterTextInToInput(passwordField, PASSWORD);
         /*passwordField.sendKeys(PASSWORD);*/
     }
-    public void pressConfirmationButtn(){
+    public void pressConfirmationButton(){
         ActionsWithElements.init(driver).clickOnElement(confirmationButton);
         /*confirmationButton.click();*/
     }
@@ -53,7 +53,7 @@ public class LoginPage extends MotherPage{
     public void enterKeyInformation(){
 
         try {
-            Thread.sleep(10000);
+            Thread.sleep(15000);
             Robot robot = new Robot();
 
             //go to password field
