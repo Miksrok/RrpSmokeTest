@@ -12,85 +12,74 @@ import java.util.List;
 public class RealEstateAddressBlock extends MotherPage {
 
     //index = 3
-    @FindBy (xpath = "//label[contains(text(), \"Населений пункт\")]/../../td[2]/*/*/*/*/input")
-    private List<WebElement> cityField;
+    @FindBy (xpath = "(//label[text() = 'Населений пункт']/../../td[2]/*/*/*/*/input)[3]")
+    private WebElement cityField;
+    @FindBy (xpath = "//span[text() = 'м.Київ']")
+    private WebElement cityNameListItem;
 
-    //index = 2
-    @FindBy (xpath = "//label[contains(text(), \"Вулиця\")]/../../td[2]/*/*/*/*/input")
-    private List<WebElement> streetField;
+    @FindBy (xpath = "(//label[text() = 'Вулиця']/../../td[2]/*/*/*/*/input)[3]")
+    private WebElement streetField;
+    @FindBy (xpath = "//span[text() = 'Антоновича']")
+    private WebElement streetName;
 
-    //index = 3
-    @FindBy (xpath = "//fieldset//label[contains(text(), \"Тип\")]/../../td[2]/*/*/*/*/input")
-    private List<WebElement> buildingTypeList;
+    @FindBy (xpath = "(//fieldset//label[contains(text(), \"Тип\")]/../../td[2]/*/*/*/*/input)[4]")
+    private WebElement buildingTypeList;
+    @FindBy (xpath = "//span[text() = 'будинок']")
+    private WebElement buildingListItem;
+    @FindBy (xpath = "(//label[text() = '№']/../../td[2]/input)[9]")
+    private WebElement buildingNumber;
 
-    //index = enterBuildingNumber (8) and  enterApartmentNumber (10)
-    @FindBy (xpath = "//label[contains(text(), \"№\")]/../../td[2]/input")
-    private List<WebElement> numbersList;
+    @FindBy (xpath = "(//label[text() = 'Тип номера']/../../td[2]/*/*/*/*/input)[3]")
+    private WebElement apartmentTypeField;
+    @FindBy (xpath = "//span[text() = 'квартира']")
+    private WebElement apartmentTypeItem;
+    @FindBy (xpath = "(//label[text() = '№']/../../td[2]/input)[11]")
+    private WebElement apartmentNumber;
 
-    //index = 2
-    @FindBy (xpath = "//label[contains(text(), \"Тип номера\")]/../../td[2]/*/*/*/*/input")
-    private List<WebElement> apartmentTypeList;
-
-    //index = 1
-    @FindBy (xpath = "//span[contains(text(), \"ОК\")]")
-    private List<WebElement> okButton;
-
-
+    @FindBy (xpath = "(//span[text() = 'ОК'])[2]")
+    private WebElement okButton;
 
     public RealEstateAddressBlock(WebDriver driver) {
         super(driver);
     }
 
-    public void enterCity(String city){
-        ActionsWithElements.init(driver).enterTextInToInput(cityField.get(3), city);
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        cityField.get(3).sendKeys(Keys.ENTER);
+    public void typeCityName(String city){
+        ActionsWithElements.init(driver).enterTextInToInput(cityField, city);
+    }
+    public void selectCity(){
+        ActionsWithElements.init(driver).clickOnElement(cityNameListItem);
     }
     public void enterStreet(String street){
         try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        ActionsWithElements.init(driver).enterTextInToInput(streetField.get(2), street);
-        try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        streetField.get(2).sendKeys(Keys.ENTER);
+        ActionsWithElements.init(driver).enterTextInToInput(streetField, street);
     }
-    public void selectBuildingType(String type){
-        ActionsWithElements.init(driver).enterTextInToInput(buildingTypeList.get(3), type);
-        /*try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
-        buildingTypeList.get(3).sendKeys(Keys.ENTER);
+    public void selectStreetName(){
+        ActionsWithElements.init(driver).clickOnElement(streetName);
+    }
+    public void enterBuildingType(String type){
+        ActionsWithElements.init(driver).enterTextInToInput(buildingTypeList, type);
+    }
+    public void selectBuildingType(){
+        ActionsWithElements.init(driver).clickOnElement(buildingListItem);
     }
     public void enterBuildingNumber(String number){
-
-        ActionsWithElements.init(driver).enterTextInToInput(numbersList.get(8), number);
+        ActionsWithElements.init(driver).enterTextInToInput(buildingNumber, number);
     }
-    public void selectApartmentType(String type){
-        ActionsWithElements.init(driver).enterTextInToInput(apartmentTypeList.get(2), type);
-       /* try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
-        apartmentTypeList.get(2).sendKeys(Keys.ENTER);
+    public void enterApartmentType(String type){
+        ActionsWithElements.init(driver).enterTextInToInput(apartmentTypeField, type);
+    }
+    public void selectApartmentType(){
+        ActionsWithElements.init(driver).clickOnElement(apartmentTypeItem);
     }
     public void enterApartmentNumber(String number){
-        ActionsWithElements.init(driver).enterTextInToInput(numbersList.get(10), number);
+        ActionsWithElements.init(driver).enterTextInToInput(apartmentNumber, number);
     }
     public void clickOkButton(){
-        ActionsWithElements.init(driver).clickOnElement(okButton.get(1));
+        ActionsWithElements.init(driver).clickOnElement(okButton);
     }
 
 

@@ -17,7 +17,7 @@ public class LeftSideMenu extends MotherPage{
     private WebElement ownershipButton;
 
     // check xpath
-    @FindBy (xpath = "//span[text() = 'заява про реєстрацію iншого речового права']")
+    @FindBy (xpath = "//span[text() = 'заява про реєстрацію іншого речового права']")
     private WebElement otherOwnershipButton;
 
     // check xpath
@@ -43,6 +43,12 @@ public class LeftSideMenu extends MotherPage{
     }
     public void pressOwnershipButton(){
         ActionsWithElements.init(driver).clickOnElement (ownershipButton);
+    }
+    public void pressOtherOwnershipButton(){
+        ActionsWithElements.init(driver).clickOnElement(otherOwnershipButton);
+    }
+    public void pressArrestButton(){
+        ActionsWithElements.init(driver).clickOnElement(arrestButton);
     }
     public void clickSectionRegistrationButton(){
         ActionsWithElements.init(driver).clickOnElement(sectionRegistrationButton);

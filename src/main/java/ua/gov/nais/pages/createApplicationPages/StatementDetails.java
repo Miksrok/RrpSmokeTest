@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.pages.MotherPage;
 import ua.gov.nais.utilities.ActionsWithElements;
 
+import javax.swing.*;
+
 public class StatementDetails extends MotherPage {
 
     @FindBy (xpath = "//span[contains(text(),'Відомості')]")
@@ -23,6 +25,18 @@ public class StatementDetails extends MotherPage {
     @FindBy (xpath = "//li[contains(text(),'державна')]")
     private WebElement ownershipListItem;
 
+    //=======================
+
+
+    @FindBy (xpath = "//label[text() = 'Вид іншого речового права']/../../td[2]/*/*/*/*/input")
+    private WebElement otherOwnershipList;
+
+    @FindBy (xpath = "//li[contains(text(),'право володіння')]")
+    private WebElement otherOwnersipListItem;
+
+    //=====================
+
+
     public StatementDetails(WebDriver driver) { super(driver); }
 
     public void pressStatementDetailsButton(){
@@ -39,5 +53,16 @@ public class StatementDetails extends MotherPage {
 
     public void pressOwnershipListItem(){
         ActionsWithElements.init(driver).clickOnElement (ownershipListItem); }
+
+        public void pressOtherOwnershipList(){
+        ActionsWithElements.init(driver).clickOnElement(otherOwnershipList);
+        }
+        public void pressOtherOwnershipListItem(){
+            ActionsWithElements.init(driver).clickOnElement(otherOwnersipListItem);
+        }
+
+
+
+
 
 }

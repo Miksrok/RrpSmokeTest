@@ -1,4 +1,4 @@
-package ua.gov.nais.pages.section.ownershipTab.newOwnership;
+package ua.gov.nais.pages.section.arrestTab.newArrest;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import ua.gov.nais.pages.MotherPage;
 import ua.gov.nais.utilities.ActionsWithElements;
 
-public class CreateOwnership extends MotherPage {
+public class CreatArrest extends MotherPage {
 
     @FindBy(xpath = "//*[@name=\"rnNum\"]")
     private WebElement indexNumberOfSolutionField;
@@ -17,7 +17,9 @@ public class CreateOwnership extends MotherPage {
     @FindBy (xpath = "//span[text() = 'Продовжити >>']/../../..")
     private  WebElement continueBotton;
 
-    public CreateOwnership(WebDriver driver) { super(driver); }
+    public CreatArrest(WebDriver driver) {
+        super(driver);
+    }
 
     public void enterIndexNumberOfSolutionField(String number){
         ActionsWithElements.init(driver).enterTextInToInput(indexNumberOfSolutionField, number);}
@@ -33,5 +35,5 @@ public class CreateOwnership extends MotherPage {
         }
         ActionsWithElements.init(driver).clickOnElement (continueBotton); }
 
-}
 
+}

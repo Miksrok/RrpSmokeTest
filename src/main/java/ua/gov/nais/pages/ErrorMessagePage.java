@@ -20,6 +20,8 @@ public class ErrorMessagePage extends MotherPage{
 
     public boolean isError() {
 
+        try{
+            Thread.sleep(3000);
             boolean marker = wait.until(ExpectedConditions.and(
                     ExpectedConditions.not(ExpectedConditions.invisibilityOf(leftMenuItem)),
                     ExpectedConditions.elementToBeClickable(leftMenuItem)));
@@ -27,6 +29,11 @@ public class ErrorMessagePage extends MotherPage{
                 return false;
             }
             return true;
+        }catch (Exception e){
+            return true;
+        }
+
+
 
     }
 }

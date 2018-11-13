@@ -8,7 +8,7 @@ import ua.gov.nais.utilities.ActionsWithElements;
 
 public class SubjectTab extends MotherPage {
 
-    @FindBy(xpath = "//span[contains(text(),\"Суб’єкт\")]")
+    @FindBy(xpath = "//span[text() = 'Суб’єкт']")
     private WebElement subjectBotton;
 
     @FindBy(xpath = "//span[contains(text(),\"Додати із заяви\")]")
@@ -17,7 +17,7 @@ public class SubjectTab extends MotherPage {
     @FindBy(xpath = "(//*[@class=\"x-grid-row-checker\"])[1]")
     private WebElement firstSubjectCheckBox;
 
-    @FindBy(xpath = "//span[(text() = \"ОК\")]")
+    @FindBy(xpath = "//span[text() = 'ОК']/../../..")
     private WebElement okSubjBotton;
 
     public SubjectTab(WebDriver driver) {super(driver);}
@@ -31,7 +31,7 @@ public class SubjectTab extends MotherPage {
     public void pressFirstSubjectCheckBox(){
         ActionsWithElements.init(driver).clickOnElement (firstSubjectCheckBox); }
 
-    public void pressOkButton(){
+    public void pressOkBotton(){
         ActionsWithElements.init(driver).clickOnElement (okSubjBotton); }
 
 }

@@ -8,22 +8,29 @@ import ua.gov.nais.utilities.ActionsWithElements;
 
 public class DocumentsTab extends MotherPage {
 
+    @FindBy (xpath = "(//span[text() = 'Документи'])[2]")
+    private WebElement documentTab;
+
     @FindBy (xpath = "(//span[text() = 'Додати документ з заяви'])[2]")
     private WebElement documentsButton;
 
     @FindBy (xpath = "//*[@class=\"x-form-field x-form-checkbox x-form-cb\"]")
     private WebElement firstDocCheckBox;
 
-    @FindBy(xpath = "(//span[contains(text(),\"ОК\")])[3]")
+    @FindBy(xpath = "(//span[text() = 'ОК']/../../..)[2]")
     private WebElement okDocBotton;
 
-    @FindBy (xpath = "//span[text() = 'Зареєструвати Право власності']")
+    @FindBy (xpath = "//span[text() = 'Зареєструвати Право власності']/../../..")
     private WebElement registerOwnershipButton;
 
-    @FindBy (xpath = "//span[text() ='Ні']")
+    @FindBy (xpath = "//span[text() ='Ні']/../../..")
     private WebElement noButton;
 
     public DocumentsTab(WebDriver driver) {super(driver);}
+
+    public void openDocumentTab(){
+        ActionsWithElements.init(driver).clickOnElement(documentTab);
+    }
 
     public void pressDocumentsButton(){
         ActionsWithElements.init(driver).clickOnElement (documentsButton); }

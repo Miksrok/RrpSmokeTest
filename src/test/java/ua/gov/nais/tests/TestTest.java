@@ -16,6 +16,9 @@ import ua.gov.nais.pages.decisionPage.DecisionPage;
 import ua.gov.nais.pages.openSectionPage.EnterDecisionNumberPage;
 import ua.gov.nais.pages.openSectionPage.EnterRealEstateAddressPage;
 import ua.gov.nais.pages.section.Section;
+import ua.gov.nais.pages.section.arrestTab.Arrest;
+import ua.gov.nais.pages.section.arrestTab.newArrest.CreatArrest;
+import ua.gov.nais.pages.section.arrestTab.newArrest.subNewArrest.ArrestOverviewTab;
 import ua.gov.nais.pages.section.ownershipTab.Ownership;
 import ua.gov.nais.pages.section.ownershipTab.newOwnership.CreateOwnership;
 import ua.gov.nais.pages.section.ownershipTab.newOwnership.SubNewOwnership.DocumentsTab;
@@ -31,7 +34,7 @@ public class TestTest extends BaseTest {
         loginPage.openLoginPage();
         loginPage.enterLogin();
         loginPage.enterPassword();
-        loginPage.pressConfirmationButtn();
+        loginPage.pressConfirmationButton();
         loginPage.enterKeyInformation();
 
         ErrorMessagePage errorMessagePage = new ErrorMessagePage(driver);
@@ -46,7 +49,7 @@ public class TestTest extends BaseTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        leftSideMenu.pressApplicationRegistrationButton();
+               leftSideMenu.pressApplicationRegistrationButton();
         leftSideMenu.pressOwnershipButton();
 
         StatementDetails statementDetails = new StatementDetails(driver);
@@ -70,11 +73,15 @@ public class TestTest extends BaseTest {
 
         RealEstateAddressBlock realEstateAddressBlock = new RealEstateAddressBlock(driver);
         RealEstate realEstate = new RealEstate();
-        realEstateAddressBlock.enterCity(realEstate.getCity());
+        realEstateAddressBlock.typeCityName(realEstate.getCity());
+        realEstateAddressBlock.selectCity();
         realEstateAddressBlock.enterStreet(realEstate.getStreet());
-        realEstateAddressBlock.selectBuildingType(realEstate.getBuildingType());
+        realEstateAddressBlock.selectStreetName();
+        realEstateAddressBlock.enterBuildingType(realEstate.getBuildingType());
+        realEstateAddressBlock.selectBuildingType();
         realEstateAddressBlock.enterBuildingNumber(realEstate.getBuildingNumber());
-        realEstateAddressBlock.selectApartmentType(realEstate.getApartmentType());
+        realEstateAddressBlock.enterApartmentType(realEstate.getApartmentType());
+        realEstateAddressBlock.selectApartmentType();
         realEstateAddressBlock.enterApartmentNumber(realEstate.getApartmentNumber());
         realEstateAddressBlock.clickOkButton();
 //======================
@@ -188,18 +195,32 @@ public class TestTest extends BaseTest {
         enterRealEstateAddressPage.pressDoNotGoToApplicationButton();
 
         Section section = new Section(driver);
-        section.pressOwnershipButton();
+        //section.pressOwnershipButton();
+        section.pressArrestButton();
 
-        Ownership ownership = new Ownership(driver);
+        /*Ownership ownership = new Ownership(driver);
         ownership.pressRegistrationList();
-        ownership.pressNewOwnershipListItem();
+        ownership.pressNewOwnershipListItem();*/
 
-        CreateOwnership createOwnership = new CreateOwnership(driver);
+        Arrest arrest = new Arrest(driver);
+        arrest.pressRegistrationList();
+        arrest.pressNewArresrListItem();
+
+        /*CreateOwnership createOwnership = new CreateOwnership(driver);
         createOwnership.enterIndexNumberOfSolutionField(number);
         createOwnership.pressVerifyButton();
-        createOwnership.pressContinueBotton();
+        createOwnership.pressContinueBotton();*/
 
-        OwnershipOverviewTab ownershipOverviewTab = new OwnershipOverviewTab(driver);
+        CreatArrest creatArrest = new CreatArrest(driver);
+        creatArrest.enterIndexNumberOfSolutionField(number);
+        creatArrest.pressVerifyButton();
+        creatArrest.pressContinueBotton();
+
+        ArrestOverviewTab arrestOverviewTab = new ArrestOverviewTab(driver);
+        arrestOverviewTab.pressArrestOverviewList();
+        arrestOverviewTab.pressArrestTypeListItem();
+
+        /*OwnershipOverviewTab ownershipOverviewTab = new OwnershipOverviewTab(driver);
         ownershipOverviewTab.pressOwnershipOverviewList();
         ownershipOverviewTab.pressPrivateOwnershipItem();
 
@@ -207,14 +228,16 @@ public class TestTest extends BaseTest {
         subjectTab.pressSubjectBotton();
         subjectTab.pressAddDocFromStatementBotton();
         subjectTab.pressFirstSubjectCheckBox();
-        subjectTab.pressOkButton();
+        subjectTab.pressOkBotton();
 
         DocumentsTab documentsTab = new DocumentsTab(driver);
+        documentsTab.openDocumentTab();
         documentsTab.pressDocumentsButton();
         documentsTab.pressFirstDocCheckBox();
         documentsTab.pressOkDocBotton();
         documentsTab.pressRegisterOwnershipButton();
         documentsTab.pressNoButton();
+*/
 
     }
 
