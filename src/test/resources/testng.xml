@@ -7,12 +7,17 @@
     </listeners>
     <test name="First long test">
         <classes>
-            <class name="ua.gov.nais.tests.TestTest"/>
+            <class name="ua.gov.nais.tests.NewApplicationOwnership"/>
         </classes>
     </test>
-   <!-- <test name="Second long test">
+    <test name="Second long test">
         <classes>
-            <class name="ua.gov.nais.tests.SecondTest"/>
+            <class name="ua.gov.nais.tests.NewApplicationOtherOwnership"/>
         </classes>
-    </test>-->
+    </test>
+    <test name="Third long test">
+        <classes>
+            <class name="ua.gov.nais.tests.NewApplicationArrest"/>
+        </classes>
+    </test>
 </suite>
