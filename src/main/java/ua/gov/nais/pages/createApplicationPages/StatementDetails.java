@@ -10,59 +10,77 @@ import javax.swing.*;
 
 public class StatementDetails extends MotherPage {
 
-    @FindBy (xpath = "//span[contains(text(),'Відомості')]")
+    @FindBy(xpath = "//span[contains(text(),'Відомості')]")
     private WebElement statementDetailsButton;
 
-    @FindBy (xpath = "//label[text() = 'Вид реєстрації']/../../td[2]/*/*/*/*/input")
+    @FindBy(xpath = "//label[text() = 'Вид реєстрації']/../../td[2]/*/*/*/*/input")
     private WebElement typeOfRegistrationList;
 
-    @FindBy (xpath = "//li[contains(text(),'виникнення')]")
+    @FindBy(xpath = "//li[contains(text(),'виникнення')]")
     private WebElement typeOfRegistrationListItem;
 
-    @FindBy (xpath = "//label[text() = 'Форма власності']/../../td[2]/*/*/*/*/input")
+    //=======================
+    @FindBy(xpath = "//label[text() = 'Форма власності']/../../td[2]/*/*/*/*/input")
     private WebElement ownershipList;
 
-    @FindBy (xpath = "//li[contains(text(),'державна')]")
+    @FindBy(xpath = "//li[contains(text(),'державна')]")
     private WebElement ownershipListItem;
 
     //=======================
 
 
-    @FindBy (xpath = "//label[text() = 'Вид іншого речового права']/../../td[2]/*/*/*/*/input")
+    @FindBy(xpath = "//label[text() = 'Вид іншого речового права']/../../td[2]/*/*/*/*/input")
     private WebElement otherOwnershipList;
 
-    @FindBy (xpath = "//li[contains(text(),'право володіння')]")
+    @FindBy(xpath = "//li[contains(text(),'право володіння')]")
     private WebElement otherOwnersipListItem;
 
     //=====================
 
+    @FindBy(xpath = "//label[text() = 'Вид обтяження']/../../td[2]/*/*/*/*/input")
+    private WebElement arrestTypeList;
 
-    public StatementDetails(WebDriver driver) { super(driver); }
+    @FindBy(xpath = "//li[contains(text(),'заборона на нерухоме майно')]")
+    private WebElement arrestTypeListItem;
 
-    public void pressStatementDetailsButton(){
-        ActionsWithElements.init(driver).clickOnElement (statementDetailsButton); }
 
-    public void pressTypeOfRegistrationList(){
-        ActionsWithElements.init(driver).clickOnElement (typeOfRegistrationList); }
+    public StatementDetails(WebDriver driver) {
+        super(driver);
+    }
 
-    public void pressTypeOfRegistrationListItem(){
-        ActionsWithElements.init(driver).clickOnElement (typeOfRegistrationListItem); }
+    public void pressStatementDetailsButton() {
+        ActionsWithElements.init(driver).clickOnElement(statementDetailsButton);
+    }
 
-    public void pressOwnershipList(){
-        ActionsWithElements.init(driver).clickOnElement (ownershipList); }
+    public void pressTypeOfRegistrationList() {
+        ActionsWithElements.init(driver).clickOnElement(typeOfRegistrationList);
+    }
 
-    public void pressOwnershipListItem(){
-        ActionsWithElements.init(driver).clickOnElement (ownershipListItem); }
+    public void pressTypeOfRegistrationListItem() {
+        ActionsWithElements.init(driver).clickOnElement(typeOfRegistrationListItem);
+    }
 
-        public void pressOtherOwnershipList(){
+    public void pressOwnershipList() {
+        ActionsWithElements.init(driver).clickOnElement(ownershipList);
+    }
+
+    public void pressOwnershipListItem() {
+        ActionsWithElements.init(driver).clickOnElement(ownershipListItem);
+    }
+
+    public void pressOtherOwnershipList() {
         ActionsWithElements.init(driver).clickOnElement(otherOwnershipList);
-        }
-        public void pressOtherOwnershipListItem(){
-            ActionsWithElements.init(driver).clickOnElement(otherOwnersipListItem);
-        }
+    }
 
-
-
+    public void pressOtherOwnershipListItem() {
+        ActionsWithElements.init(driver).clickOnElement(otherOwnersipListItem);
+    }
+    public void pressArrestTypeList(){
+        ActionsWithElements.init(driver).clickOnElement(arrestTypeList);
+    }
+    public void pressArrestTypeListItem(){
+        ActionsWithElements.init(driver).clickOnElement(arrestTypeListItem);
+    }
 
 
 }

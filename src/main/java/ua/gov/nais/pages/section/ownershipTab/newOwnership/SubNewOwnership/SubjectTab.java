@@ -9,10 +9,10 @@ import ua.gov.nais.utilities.ActionsWithElements;
 public class SubjectTab extends MotherPage {
 
     @FindBy(xpath = "//span[text() = 'Суб’єкт']")
-    private WebElement subjectBotton;
+    private WebElement subjectButton;
 
     @FindBy(xpath = "//span[contains(text(),\"Додати із заяви\")]")
-    private WebElement addDocFromStatementBotton;
+    private WebElement addDocFromStatementButton;
 
     @FindBy(xpath = "(//*[@class=\"x-grid-row-checker\"])[1]")
     private WebElement firstSubjectCheckBox;
@@ -23,13 +23,14 @@ public class SubjectTab extends MotherPage {
     @FindBy(xpath = "//span[text() = 'ОК']/../../..")
     private WebElement okSubjBotton;
 
+
     public SubjectTab(WebDriver driver) {super(driver);}
 
-    public void pressSubjectBotton(){
-        ActionsWithElements.init(driver).clickOnElement (subjectBotton); }
+    public void pressSubjectButton(){
+        ActionsWithElements.init(driver).clickOnElement (subjectButton); }
 
-    public void pressAddDocFromStatementBotton(){
-        ActionsWithElements.init(driver).clickOnElement (addDocFromStatementBotton); }
+    public void pressAddDocFromStatementButton(){
+        ActionsWithElements.init(driver).clickOnElement (addDocFromStatementButton); }
 
     public void pressFirstSubjectCheckBox(){
         ActionsWithElements.init(driver).clickOnElement (firstSubjectCheckBox); }
