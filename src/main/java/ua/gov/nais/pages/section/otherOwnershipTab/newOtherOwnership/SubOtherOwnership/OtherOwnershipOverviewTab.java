@@ -13,20 +13,25 @@ public class OtherOwnershipOverviewTab extends MotherPage {
     @FindBy(xpath = "//*[@name=\"dcIrpSort\"]")
     private WebElement otOwnershipOverviewList;
 
-    @FindBy (xpath = "//li[contains(text(), 'право володіння')]")
+    @FindBy(xpath = "//li[contains(text(), 'право володіння')]")
     private WebElement rightOfOwnershipItem;
 
     @FindBy(xpath = "//*[@name=\"objectDescription\"]")
     private WebElement descriptionOfSubjectOfOtOwField;
 
-    public OtherOwnershipOverviewTab(WebDriver driver) {super(driver);}
+    public OtherOwnershipOverviewTab(WebDriver driver) {
+        super(driver);
+    }
 
-    public void pressOtOwnershipOverviewList(){
-        ActionsWithElements.init(driver).clickOnElement (otOwnershipOverviewList); }
+    public void pressOtOwnershipOverviewList() {
+        ActionsWithElements.init(driver).clickOnElement(otOwnershipOverviewList);
+    }
 
-    public void pressRightOfOwnershipItem(){
-        ActionsWithElements.init(driver).clickOnElement (rightOfOwnershipItem); }
+    public void pressRightOfOwnershipItem() {
+        ActionsWithElements.init(driver).clickOnElement(rightOfOwnershipItem);
+    }
 
-    public void pressDescriptionOfSubjectOfOtOwField(){
-        ActionsWithElements.init(driver).enterTextInToInput (descriptionOfSubjectOfOtOwField, "Автоматичне запонення значення опису предмета іншого речового права"); }
+    public void pressDescriptionOfSubjectOfOtOwField() {
+        ActionsWithElements.init(driver).enterTextInToInput(descriptionOfSubjectOfOtOwField, "Автоматичне запонення значення опису предмета іншого речового права");
+    }
 }

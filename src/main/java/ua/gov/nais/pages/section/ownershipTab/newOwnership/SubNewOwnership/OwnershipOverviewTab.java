@@ -11,15 +11,19 @@ public class OwnershipOverviewTab extends MotherPage {
     @FindBy(xpath = "//*[@name=\"dcPrType\"]/../../td[2]/div")
     private WebElement ownershipOverviewList;
 
-    @FindBy (xpath = "//li[contains(text(), 'приватна')]")
+    @FindBy(xpath = "//li[contains(text(), 'приватна')]")
     private WebElement privateOwnershipItem;
 
-    public OwnershipOverviewTab(WebDriver driver) {super(driver);}
+    public OwnershipOverviewTab(WebDriver driver) {
+        super(driver);
+    }
 
-    public void pressOwnershipOverviewList(){
-        ActionsWithElements.init(driver).clickOnElement (ownershipOverviewList); }
+    public void pressOwnershipOverviewList() {
+        ActionsWithElements.init(driver).clickOnElement(ownershipOverviewList);
+    }
 
-    public void pressPrivateOwnershipItem(){
-        ActionsWithElements.init(driver).clickOnElement (privateOwnershipItem); }
+    public void pressPrivateOwnershipItem() {
+        ActionsWithElements.init(driver).clickOnElement(privateOwnershipItem);
+    }
 
 }

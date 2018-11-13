@@ -14,7 +14,7 @@ public class DocumentsTab extends MotherPage {
     @FindBy(xpath = "(//span[text() = 'Додати документ з заяви'])[2]")
     private WebElement documentsButton;
 
-    @FindBy(xpath = "//*[@class=\"x-form-field x-form-checkbox x-form-cb\"]")
+    @FindBy(xpath = "(//*[@class=\"x-form-field x-form-checkbox x-form-cb\"])[2]")
     private WebElement firstDocCheckBox;
 
     @FindBy(xpath = "(//span[text() = 'ОК']/../../..)[2]")
