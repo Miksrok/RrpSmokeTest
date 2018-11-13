@@ -13,20 +13,39 @@ public class CreateOtherOwnership extends MotherPage {
     @FindBy(xpath = "//*[@name=\"rnNum\"]")
     private WebElement otOwIndexNumberOfSolutionField;
 
-    @FindBy (xpath = "(//label[text() = 'Індексний номер рішення']/../../../../../a)[1]")
+    @FindBy(xpath = "(//label[text() = 'Індексний номер рішення']/../../../../../a)[1]")
     private WebElement otOwverifyButton;
 
-    @FindBy (xpath = "(//span[contains(text(), 'Продовжити')])[1]")
-    private  WebElement otOwContinueBotton;
+    @FindBy(xpath = "(//span[contains(text(), 'Продовжити')])[1]")
+    private WebElement otOwContinueBotton;
 
-    public void enterOtOwIndexNumberOfSolutionField(String number){
-        ActionsWithElements.init(driver).enterTextInToInput(otOwIndexNumberOfSolutionField, number);}
+    @FindBy(xpath = "//span[text() = 'Зареєструвати Інше речове право']/../../..")
+    private WebElement registerOterOwnershipButton;
 
-    public void pressOtOwverifyButton(){
-        ActionsWithElements.init(driver).clickOnElement (otOwverifyButton); }
+    @FindBy(xpath = "//span[text() ='Ні']/../../..")
+    private WebElement noOtOwButton;
 
-    public void pressOtOwcontinueBotton(){
-        ActionsWithElements.init(driver).clickOnElement (otOwContinueBotton); }
+    public CreateOtherOwnership(WebDriver driver) {
+        super(driver);
+    }
 
-    public CreateOtherOwnership(WebDriver driver) {super(driver);}
+    public void enterOtOwIndexNumberOfSolutionField(String number) {
+        ActionsWithElements.init(driver).enterTextInToInput(otOwIndexNumberOfSolutionField, number);
+    }
+
+    public void pressOtOwverifyButton() {
+        ActionsWithElements.init(driver).clickOnElement(otOwverifyButton);
+    }
+
+    public void pressOtOwcontinueBotton() {
+        ActionsWithElements.init(driver).clickOnElement(otOwContinueBotton);
+    }
+
+    public void pressRegisterOterOwnershipButton() {
+        ActionsWithElements.init(driver).clickOnElement(registerOterOwnershipButton);
+    }
+
+    public void pressNoOtOwButton() {
+        ActionsWithElements.init(driver).clickOnElement(noOtOwButton);
+    }
 }

@@ -22,18 +22,24 @@ public class OtherOwnershipSubjectTab extends MotherPage {
     @FindBy(xpath = "//span[(text() = \"ОК\")]")
     private WebElement otOwOkSubjBotton;
 
-    public OtherOwnershipSubjectTab(WebDriver driver) {super(driver);}
+    public OtherOwnershipSubjectTab(WebDriver driver) {
+        super(driver);
+    }
 
-    public void pressOtOwSubjectBotton(){
-        ActionsWithElements.init(driver).clickOnElement (otOwSubjectBotton); }
+    public void pressOtOwSubjectBotton() {
+        ActionsWithElements.init(driver).clickOnElement(otOwSubjectBotton);
+    }
 
-    public void pressOtOwAddDocFromStatementBotton(){
-        ActionsWithElements.init(driver).clickOnElement (otOwAddDocFromStatementBotton); }
+    public void pressOtOwAddDocFromStatementBotton() {
+        ActionsWithElements.init(driver).clickOnElement(otOwAddDocFromStatementBotton);
+    }
 
-    public void pressOtOwFirstSubjectCheckBox(){
-        ActionsWithElements.init(driver).clickOnElement (otOwFirstSubjectCheckBox); }
+    public void pressOtOwFirstSubjectCheckBox() {
+        ActionsWithElements.init(driver).clickOnElement(otOwFirstSubjectCheckBox);
+    }
 
-    public void pressOtOwOkSubjBotton(){
-        ActionsWithElements.init(driver).clickOnElement (otOwOkSubjBotton); }
+    public void pressOtOwOkSubjBotton() {
+        ActionsWithElements.init(driver).clickOnElement(otOwOkSubjBotton);
+    }
 
 }
