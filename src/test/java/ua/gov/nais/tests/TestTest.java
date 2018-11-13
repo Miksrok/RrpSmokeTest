@@ -20,6 +20,7 @@ import ua.gov.nais.pages.section.arrestTab.Arrest;
 import ua.gov.nais.pages.section.arrestTab.newArrest.CreatArrest;
 import ua.gov.nais.pages.section.arrestTab.newArrest.subNewArrest.ArresrDocumentsTab;
 import ua.gov.nais.pages.section.arrestTab.newArrest.subNewArrest.ArrestOverviewTab;
+import ua.gov.nais.pages.section.arrestTab.newArrest.subNewArrest.ArrestSubjectTab;
 import ua.gov.nais.pages.section.ownershipTab.Ownership;
 import ua.gov.nais.pages.section.ownershipTab.newOwnership.CreateOwnership;
 import ua.gov.nais.pages.section.ownershipTab.newOwnership.SubNewOwnership.DocumentsTab;
@@ -240,6 +241,20 @@ public class TestTest extends BaseTest {
         arresrDocumentsTab.pressFirstDocCheckBox();
         arresrDocumentsTab.pressOkDocBotton();
 
+        ArrestSubjectTab arrestSubjectTab = new ArrestSubjectTab(driver);
+        arrestSubjectTab.pressSubjectButton();
+        arrestSubjectTab.pressAddSbjFromStatementButton();
+        arrestSubjectTab.pressAddSbjFromStatementButton();
+        arrestSubjectTab.pressFirstSubjectCheckBox();
+        arrestSubjectTab.pressOkSbjButton();
+        arrestSubjectTab.clickOpenSubjectModalWindowButton();
+        arrestSubjectTab.clickOpenCloseRoleListButton();
+        arrestSubjectTab.selectRole();
+        arrestSubjectTab.clickOpenCloseRoleListButton();
+        arrestSubjectTab.clickOkButton();
+
+        creatArrest.pressCreateArrestButton();
+        creatArrest.pressNoButton();
         /*OwnershipOverviewTab ownershipOverviewTab = new OwnershipOverviewTab(driver);
         ownershipOverviewTab.pressOwnershipOverviewList();
         ownershipOverviewTab.pressPrivateOwnershipItem();
