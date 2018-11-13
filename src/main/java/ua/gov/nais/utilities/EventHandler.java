@@ -135,8 +135,8 @@ public class EventHandler implements WebDriverEventListener {
     @Override
     public void onException(Throwable throwable, WebDriver webDriver) {
 
-
-     /*  System.setProperty("org.uncommons.reportng.escape-output", "false");
+       /*
+       System.setProperty("org.uncommons.reportng.escape-output", "false");
         String timeStamp;
         File screenShotName;
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
@@ -154,8 +154,8 @@ public class EventHandler implements WebDriverEventListener {
         //String path = "<img src="\"file://"" alt="\"\"/" />";
         Reporter.log("<br><a href='D:\\MyTest\\Screenshots\\"+timeStamp+".png'>text</a>");
 
-        driver.close();*/
-
+        driver.close();
+*/
     }
 
     @Override

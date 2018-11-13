@@ -18,6 +18,7 @@ import ua.gov.nais.pages.openSectionPage.EnterRealEstateAddressPage;
 import ua.gov.nais.pages.section.Section;
 import ua.gov.nais.pages.section.arrestTab.Arrest;
 import ua.gov.nais.pages.section.arrestTab.newArrest.CreatArrest;
+import ua.gov.nais.pages.section.arrestTab.newArrest.subNewArrest.ArresrDocumentsTab;
 import ua.gov.nais.pages.section.arrestTab.newArrest.subNewArrest.ArrestOverviewTab;
 import ua.gov.nais.pages.section.ownershipTab.Ownership;
 import ua.gov.nais.pages.section.ownershipTab.newOwnership.CreateOwnership;
@@ -131,6 +132,19 @@ public class TestTest extends BaseTest {
         documents.pressCertificateOfDABIlistItem();
         documents.enterNumberOfDoc();
         documents.enterPublisherInfo();
+        //====
+        documents.pressAddDocumentButton();
+        documents.pressDocumentTypeList();
+        documents.selectMortgageContrac();
+        documents.enterNumberOfDoc();
+        documents.enterPublisherInfo();
+
+        documents.pressAddDocumentButton();
+        documents.pressDocumentTypeList();
+        documents.selectLifeLongMaintenanceAgreement();
+        documents.enterNumberOfDoc();
+        documents.enterPublisherInfo();
+
 //=====================
         BottomBlock bottomBlock = new BottomBlock(driver);
         bottomBlock.pressApplicationDeadlineList();
@@ -220,6 +234,12 @@ public class TestTest extends BaseTest {
         arrestOverviewTab.pressArrestOverviewList();
         arrestOverviewTab.pressArrestTypeListItem();
 
+        ArresrDocumentsTab arresrDocumentsTab = new ArresrDocumentsTab(driver);
+        arresrDocumentsTab.openDocumentTab();
+        arresrDocumentsTab.pressDocumentsButton();
+        arresrDocumentsTab.pressFirstDocCheckBox();
+        arresrDocumentsTab.pressOkDocBotton();
+
         /*OwnershipOverviewTab ownershipOverviewTab = new OwnershipOverviewTab(driver);
         ownershipOverviewTab.pressOwnershipOverviewList();
         ownershipOverviewTab.pressPrivateOwnershipItem();
@@ -228,7 +248,7 @@ public class TestTest extends BaseTest {
         subjectTab.pressSubjectBotton();
         subjectTab.pressAddDocFromStatementBotton();
         subjectTab.pressFirstSubjectCheckBox();
-        subjectTab.pressOkBotton();
+        subjectTab.pressOkButton();
 
         DocumentsTab documentsTab = new DocumentsTab(driver);
         documentsTab.openDocumentTab();
@@ -237,7 +257,10 @@ public class TestTest extends BaseTest {
         documentsTab.pressOkDocBotton();
         documentsTab.pressRegisterOwnershipButton();
         documentsTab.pressNoButton();
+
+=======
 */
+
 
     }
 

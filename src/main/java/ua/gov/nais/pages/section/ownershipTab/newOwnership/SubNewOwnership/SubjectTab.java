@@ -17,6 +17,9 @@ public class SubjectTab extends MotherPage {
     @FindBy(xpath = "(//*[@class=\"x-grid-row-checker\"])[1]")
     private WebElement firstSubjectCheckBox;
 
+
+   // @FindBy(xpath = "//span[(text() = \"ОК\")]")
+
     @FindBy(xpath = "//span[text() = 'ОК']/../../..")
     private WebElement okSubjBotton;
 
@@ -31,7 +34,7 @@ public class SubjectTab extends MotherPage {
     public void pressFirstSubjectCheckBox(){
         ActionsWithElements.init(driver).clickOnElement (firstSubjectCheckBox); }
 
-    public void pressOkBotton(){
+    public void pressOkButton(){
         ActionsWithElements.init(driver).clickOnElement (okSubjBotton); }
 
 }
