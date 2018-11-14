@@ -114,5 +114,22 @@ public class PersonBlock extends MotherPage {
         ActionsWithElements.init(driver).clickOnElement(okButton.get(2));
     }
 
+   // поправить под аресты
+    public void enterInformationAboutPerson(String fullName, String id, String passportNumber,
+                                            String passportDate, String passportPublisher){
+        clickPersonBlockButton();
+        clickAddPersonButton();
+        clickAddPhisycalPersonButton();
+        clickRoleList();
+        addPersonOfLaw();
+        addApplicantItem();
+        clickCloseRoleList();
+        enterFullName(fullName);
+        enterId(id);
+        enterPassportNumber(passportNumber);
+        enterPassportDate(passportDate);
+        enterPassportPublisher(passportPublisher);
+        pressOkButton();
+    }
 
 }

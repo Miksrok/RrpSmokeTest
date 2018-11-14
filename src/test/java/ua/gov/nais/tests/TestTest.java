@@ -136,7 +136,7 @@ public class TestTest extends BaseTest {
         //====
         documents.pressAddDocumentButton();
         documents.pressDocumentTypeList();
-        documents.selectMortgageContrac();
+        documents.selectMortgageContract();
         documents.enterNumberOfDoc();
         documents.enterPublisherInfo();
 

@@ -30,7 +30,7 @@ public class AccompanyingDocuments extends MotherPage {
     @FindBy(xpath = "//li[text() = 'договір інвестування в будівництво']")
     private WebElement mortgageContract;
 
-    @FindBy (xpath = "//li[text() = 'договір довічного утримання']")
+    @FindBy(xpath = "//li[text() = 'договір довічного утримання']")
     private WebElement lifeLongMaintenanceAgreement;
 
     // ind = 6
@@ -61,11 +61,11 @@ public class AccompanyingDocuments extends MotherPage {
         ActionsWithElements.init(driver).clickOnElement(certificateOfDABIlistItem);
     }
 
-    public void selectMortgageContrac() {
+    public void selectMortgageContract() {
         ActionsWithElements.init(driver).clickOnElement(mortgageContract);
     }
 
-    public void selectLifeLongMaintenanceAgreement(){
+    public void selectLifeLongMaintenanceAgreement() {
         ActionsWithElements.init(driver).clickOnElement(lifeLongMaintenanceAgreement);
     }
 
@@ -76,5 +76,30 @@ public class AccompanyingDocuments extends MotherPage {
     public void enterPublisherInfo() {
         ActionsWithElements.init(driver).enterTextInToInput(publisherField.get(2), PUBLISHER);
     }
+
+    public void addDABI() {
+        pressAddDocumentButton();
+        pressDocumentTypeList();
+        pressCertificateOfDABIlistItem();
+        enterNumberOfDoc();
+        enterPublisherInfo();
+    }
+
+    public void addMortageContract() {
+        pressAddDocumentButton();
+        pressDocumentTypeList();
+        selectMortgageContract();
+        enterNumberOfDoc();
+        enterPublisherInfo();
+    }
+
+    public void addLifeLongMaintenanceAgreement() {
+        pressAddDocumentButton();
+        pressDocumentTypeList();
+        selectLifeLongMaintenanceAgreement();
+        enterNumberOfDoc();
+        enterPublisherInfo();
+    }
+
 
 }

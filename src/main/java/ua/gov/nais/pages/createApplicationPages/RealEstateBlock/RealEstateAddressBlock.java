@@ -92,5 +92,19 @@ public class RealEstateAddressBlock extends MotherPage {
         ActionsWithElements.init(driver).clickOnElement(okButton);
     }
 
+    public void enterRealEstateAddress(String city, String street, String buildingType, String buildingNumber, String apartmentType, String apartmentNumber){
+        typeCityName(city);
+        selectCity();
+        enterStreet(street);
+        selectStreetName();
+        enterBuildingType(buildingType);
+        selectBuildingType();
+        enterBuildingNumber(buildingNumber);
+        enterApartmentType(apartmentType);
+        selectApartmentType();
+        enterApartmentNumber(apartmentNumber);
+        clickOkButton();
+    }
+
 
 }

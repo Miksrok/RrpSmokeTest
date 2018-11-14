@@ -81,6 +81,22 @@ public class StatementDetails extends MotherPage {
     public void pressArrestTypeListItem(){
         ActionsWithElements.init(driver).clickOnElement(arrestTypeListItem);
     }
-
+//=============================================
+    public void selectRegistrationType(){
+        pressTypeOfRegistrationList();
+        pressTypeOfRegistrationListItem();
+    }
+    public void enterStatementDetailsForOwnership(){
+        pressOwnershipList();
+        pressOwnershipListItem();
+    }
+    public void enterStatementDetailsForOtherOwnership(){
+        pressOtherOwnershipList();
+        pressOtherOwnershipListItem();
+    }
+    public void enterStatementDetailsForArrest(){
+        pressArrestTypeList();
+        pressArrestTypeListItem();
+    }
 
 }

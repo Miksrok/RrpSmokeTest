@@ -12,39 +12,27 @@ import ua.gov.nais.pages.createApplicationPages.RealEstateBlock.AddRealEstateBlo
 import ua.gov.nais.pages.createApplicationPages.RealEstateBlock.RealEstateAddressBlock;
 import ua.gov.nais.pages.createApplicationPages.RealEstateBlock.RealEstateMainBlock;
 
-public class NewApplicationOwnership extends BaseTest{
+import java.io.File;
+
+public class NewApplicationOwnership extends BaseTest {
 
     private final String OWNERSHIP = "заява про державну реєстрацію права власності";
     private final String APPLICATION_STATE = "зареєстровано";
 
     @Test
-    public void createApplicationOwnership(){
+    public void createApplicationOwnership() {
 
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.openLoginPage();
-        loginPage.enterLogin();
-        loginPage.enterPassword();
-        loginPage.pressConfirmationButton();
-        loginPage.enterKeyInformation();
+        loginPage.authorizaton();
 
         LeftSideMenu leftSideMenu = new LeftSideMenu(driver);
-        leftSideMenu.pressRegistrationAndProcessingButton();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        leftSideMenu.pressApplicationRegistrationButton();
-        //application type
-        leftSideMenu.pressOwnershipButton();
+        leftSideMenu.openOwnershipApplicationForm();
 
         StatementDetails statementDetails = new StatementDetails(driver);
-        statementDetails.pressTypeOfRegistrationList();
-        statementDetails.pressTypeOfRegistrationListItem();
-        statementDetails.pressOwnershipList();
-        statementDetails.pressOwnershipListItem();
+        statementDetails.selectRegistrationType();
+        statementDetails.enterStatementDetailsForOwnership();
 //==================
-        RealEstateMainBlock realEstateMainBlock  = new RealEstateMainBlock(driver);
+        RealEstateMainBlock realEstateMainBlock = new RealEstateMainBlock(driver);
         realEstateMainBlock.clickRealEstateBlook();
         realEstateMainBlock.clickAddButton();
         realEstateMainBlock.clicAddRealEstateButton();
@@ -59,77 +47,34 @@ public class NewApplicationOwnership extends BaseTest{
 
         RealEstateAddressBlock realEstateAddressBlock = new RealEstateAddressBlock(driver);
         RealEstate realEstate = new RealEstate();
-        realEstateAddressBlock.typeCityName(realEstate.getCity());
-        realEstateAddressBlock.selectCity();
-        realEstateAddressBlock.enterStreet(realEstate.getStreet());
-        realEstateAddressBlock.selectStreetName();
-        realEstateAddressBlock.enterBuildingType(realEstate.getBuildingType());
-        realEstateAddressBlock.selectBuildingType();
-        realEstateAddressBlock.enterBuildingNumber(realEstate.getBuildingNumber());
-        realEstateAddressBlock.enterApartmentType(realEstate.getApartmentType());
-        realEstateAddressBlock.selectApartmentType();
-        realEstateAddressBlock.enterApartmentNumber(realEstate.getApartmentNumber());
-        realEstateAddressBlock.clickOkButton();
+        realEstateAddressBlock.enterRealEstateAddress(
+                realEstate.getCity(),
+                realEstate.getStreet(),
+                realEstate.getBuildingType(),
+                realEstate.getBuildingNumber(),
+                realEstate.getApartmentType(),
+                realEstate.getApartmentNumber()
+        );
 //======================
         PersonBlock personBlock = new PersonBlock(driver);
-        personBlock.clickPersonBlockButton();
-        personBlock.clickAddPersonButton();
-        personBlock.clickAddPhisycalPersonButton();
-        personBlock.clickRoleList();
-        personBlock.addPersonOfLaw();
-        personBlock.addApplicantItem();
-        personBlock.clickCloseRoleList();
         Person person = new Person();
-        personBlock.enterFullName(person.getFullName());
-        personBlock.enterId(person.getId());
-        personBlock.enterPassportNumber(person.getPassport());
-        personBlock.enterPassportDate(person.getPassportDate());
-        personBlock.enterPassportPublisher(person.getPassportPublisher());
-        personBlock.pressOkButton();
+
+        personBlock.enterInformationAboutPerson(
+                person.getFullName(),
+                person.getId(),
+                person.getPassport(),
+                person.getPassportDate(),
+                person.getPassportPublisher()
+        );
 //================
         PaymentDetails paymentDetails = new PaymentDetails(driver);
-        paymentDetails.pressPaymentdDetailsButton();
-        paymentDetails.pressAdditionOfPaymentButton();
-        paymentDetails.pressTypeOfpaymentList();
-        paymentDetails.pressFeeForRegistrationActionsListItem();
-        paymentDetails.pressReasonRadioButton();
-        paymentDetails.pressReasonList();
-        paymentDetails.pressAtTheRequestOfTheNBUListItem();
-       /* try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
-        paymentDetails.pressApplyButton();
-
-        paymentDetails.pressAdditionOfPaymentButton();
-        paymentDetails.pressTypeOfpaymentList();
-        paymentDetails.pressFeeForProvidingInformationListItem();
-        paymentDetails.pressReasonRadioButton();
-        paymentDetails.pressReasonList();
-        paymentDetails.pressAtTheRequestOfTheNBUListItem();
-        paymentDetails.pressApplyButton();
+        paymentDetails.addPaymantDetails();
 //====================
         AccompanyingDocuments documents = new AccompanyingDocuments(driver);
         documents.pressAccompanyingDocumentsButton();
-        documents.pressAddDocumentButton();
-        documents.pressDocumentTypeList();
-        documents.pressCertificateOfDABIlistItem();
-        documents.enterNumberOfDoc();
-        documents.enterPublisherInfo();
-        //====
-        documents.pressAddDocumentButton();
-        documents.pressDocumentTypeList();
-        documents.selectMortgageContrac();
-        documents.enterNumberOfDoc();
-        documents.enterPublisherInfo();
-
-        documents.pressAddDocumentButton();
-        documents.pressDocumentTypeList();
-        documents.selectLifeLongMaintenanceAgreement();
-        documents.enterNumberOfDoc();
-        documents.enterPublisherInfo();
-
+        documents.addDABI();
+        documents.addMortageContract();
+        documents.addLifeLongMaintenanceAgreement();
 //=====================
         BottomBlock bottomBlock = new BottomBlock(driver);
         bottomBlock.pressApplicationDeadlineList();

@@ -20,30 +20,16 @@ public class NewApplicationOtherOwnership extends BaseTest{
     @Test
     public void createApplicationOtherOwnersip(){
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.openLoginPage();
-        loginPage.enterLogin();
-        loginPage.enterPassword();
-        loginPage.pressConfirmationButton();
-        loginPage.enterKeyInformation();
+        loginPage.authorizaton();
 
         LeftSideMenu leftSideMenu = new LeftSideMenu(driver);
-        leftSideMenu.pressRegistrationAndProcessingButton();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        leftSideMenu.pressApplicationRegistrationButton();
-        //application type
-        leftSideMenu.pressOtherOwnershipButton();
+        leftSideMenu.openOtherOwnershipApplicationForm();
 
         StatementDetails statementDetails = new StatementDetails(driver);
-        statementDetails.pressTypeOfRegistrationList();
-        statementDetails.pressTypeOfRegistrationListItem();
-        statementDetails.pressOtherOwnershipList();
-        statementDetails.pressOtherOwnershipListItem();
+        statementDetails.selectRegistrationType();
+        statementDetails.enterStatementDetailsForOtherOwnership();
 //==================
-        RealEstateMainBlock realEstateMainBlock  = new RealEstateMainBlock(driver);
+        RealEstateMainBlock realEstateMainBlock = new RealEstateMainBlock(driver);
         realEstateMainBlock.clickRealEstateBlook();
         realEstateMainBlock.clickAddButton();
         realEstateMainBlock.clicAddRealEstateButton();
@@ -58,72 +44,33 @@ public class NewApplicationOtherOwnership extends BaseTest{
 
         RealEstateAddressBlock realEstateAddressBlock = new RealEstateAddressBlock(driver);
         RealEstate realEstate = new RealEstate();
-        realEstateAddressBlock.typeCityName(realEstate.getCity());
-        realEstateAddressBlock.selectCity();
-        realEstateAddressBlock.enterStreet(realEstate.getStreet());
-        realEstateAddressBlock.selectStreetName();
-        realEstateAddressBlock.enterBuildingType(realEstate.getBuildingType());
-        realEstateAddressBlock.selectBuildingType();
-        realEstateAddressBlock.enterBuildingNumber(realEstate.getBuildingNumber());
-        realEstateAddressBlock.enterApartmentType(realEstate.getApartmentType());
-        realEstateAddressBlock.selectApartmentType();
-        realEstateAddressBlock.enterApartmentNumber(realEstate.getApartmentNumber());
-        realEstateAddressBlock.clickOkButton();
+        realEstateAddressBlock.enterRealEstateAddress(
+                realEstate.getCity(),
+                realEstate.getStreet(),
+                realEstate.getBuildingType(),
+                realEstate.getBuildingNumber(),
+                realEstate.getApartmentType(),
+                realEstate.getApartmentNumber()
+        );
 //======================
         PersonBlock personBlock = new PersonBlock(driver);
-        personBlock.clickPersonBlockButton();
-        personBlock.clickAddPersonButton();
-        personBlock.clickAddPhisycalPersonButton();
-        personBlock.clickRoleList();
-        personBlock.addPersonOfLaw();
-        personBlock.addApplicantItem();
-        personBlock.clickCloseRoleList();
         Person person = new Person();
-        personBlock.enterFullName(person.getFullName());
-        personBlock.enterId(person.getId());
-        personBlock.enterPassportNumber(person.getPassport());
-        personBlock.enterPassportDate(person.getPassportDate());
-        personBlock.enterPassportPublisher(person.getPassportPublisher());
-        personBlock.pressOkButton();
+
+        personBlock.enterInformationAboutPerson(
+                person.getFullName(),
+                person.getId(),
+                person.getPassport(),
+                person.getPassportDate(),
+                person.getPassportPublisher()
+        );
 //================
         PaymentDetails paymentDetails = new PaymentDetails(driver);
-        paymentDetails.pressPaymentdDetailsButton();
-        paymentDetails.pressAdditionOfPaymentButton();
-        paymentDetails.pressTypeOfpaymentList();
-        paymentDetails.pressFeeForRegistrationActionsListItem();
-        paymentDetails.pressReasonRadioButton();
-        paymentDetails.pressReasonList();
-        paymentDetails.pressAtTheRequestOfTheNBUListItem();
-       /* try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
-        paymentDetails.pressApplyButton();
-
-        paymentDetails.pressAdditionOfPaymentButton();
-        paymentDetails.pressTypeOfpaymentList();
-        paymentDetails.pressFeeForProvidingInformationListItem();
-        paymentDetails.pressReasonRadioButton();
-        paymentDetails.pressReasonList();
-        paymentDetails.pressAtTheRequestOfTheNBUListItem();
-        paymentDetails.pressApplyButton();
+        paymentDetails.addPaymantDetails();
 //====================
         AccompanyingDocuments documents = new AccompanyingDocuments(driver);
         documents.pressAccompanyingDocumentsButton();
-        documents.pressAddDocumentButton();
-        documents.pressDocumentTypeList();
-        documents.pressCertificateOfDABIlistItem();
-        documents.enterNumberOfDoc();
-        documents.enterPublisherInfo();
-        //====
-        documents.pressAddDocumentButton();
-        documents.pressDocumentTypeList();
-        documents.selectMortgageContrac();
-        documents.enterNumberOfDoc();
-        documents.enterPublisherInfo();
-
-
+        documents.addDABI();
+        documents.addMortageContract();
 //=====================
         BottomBlock bottomBlock = new BottomBlock(driver);
         bottomBlock.pressApplicationDeadlineList();
@@ -135,6 +82,7 @@ public class NewApplicationOtherOwnership extends BaseTest{
         ApplicationPage applicationPage = new ApplicationPage(driver);
         applicationPage.closeWindow();
 
+        //Asserts
         ApplicationAsserts applicationAsserts = new ApplicationAsserts(driver);
         Assert.assertEquals(OTHER_OWNERSHIP, applicationAsserts.getApplicationName(), "wrong application name");
         Assert.assertEquals(APPLICATION_STATE, applicationAsserts.getApplicationState(), "wrong application state");
