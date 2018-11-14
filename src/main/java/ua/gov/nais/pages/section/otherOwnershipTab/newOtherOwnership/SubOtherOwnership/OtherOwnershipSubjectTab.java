@@ -22,6 +22,18 @@ public class OtherOwnershipSubjectTab extends MotherPage {
     @FindBy(xpath = "//span[(text() = \"ОК\")]")
     private WebElement otOwOkSubjBotton;
 
+    @FindBy(xpath = "(//fieldset/div/*/*/*/*/*/*/a)[1]")
+    private WebElement openSubjectModalWindowButton;
+
+    @FindBy(xpath = "//label[contains(text(), 'Роль')]/../../td[2]/*/*/*/td[2]/div")
+    private WebElement openCloseRoleListButton;
+
+    @FindBy(xpath = "//li[text() = 'Правонабувач']")
+    private WebElement roleLawyer;
+
+    @FindBy(xpath = "//span[text() = 'ОК']")
+    private WebElement okButton;
+
     public OtherOwnershipSubjectTab(WebDriver driver) {
         super(driver);
     }
@@ -42,4 +54,19 @@ public class OtherOwnershipSubjectTab extends MotherPage {
         ActionsWithElements.init(driver).clickOnElement(otOwOkSubjBotton);
     }
 
+    public void pressOpenSubjectModalWindowButton() {
+        ActionsWithElements.init(driver).clickOnElement(openSubjectModalWindowButton);
+    }
+
+    public void presskOpenCloseRoleListButton() {
+        ActionsWithElements.init(driver).clickOnElement(openCloseRoleListButton);
+    }
+
+    public void pressSelectRole() {
+        ActionsWithElements.init(driver).clickOnElement(roleLawyer);
+    }
+
+    public void pressOkButton() {
+        ActionsWithElements.init(driver).clickOnElement(okButton);
+    }
 }
