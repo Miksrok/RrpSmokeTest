@@ -1,5 +1,6 @@
 package ua.gov.nais.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import ua.gov.nais.models.Person;
 import ua.gov.nais.models.RealEstate;
@@ -12,6 +13,9 @@ import ua.gov.nais.pages.createApplicationPages.RealEstateBlock.RealEstateAddres
 import ua.gov.nais.pages.createApplicationPages.RealEstateBlock.RealEstateMainBlock;
 
 public class NewApplicationOwnership extends BaseTest{
+
+    private final String OWNERSHIP = "заява про державну реєстрацію права власності";
+    private final String APPLICATION_STATE = "зареєстровано";
 
     @Test
     public void createApplicationOwnership(){
@@ -136,6 +140,11 @@ public class NewApplicationOwnership extends BaseTest{
 
         ApplicationPage applicationPage = new ApplicationPage(driver);
         applicationPage.closeWindow();
+
+        //Asserts
+        ApplicationAsserts applicationAsserts = new ApplicationAsserts(driver);
+        Assert.assertEquals(OWNERSHIP, applicationAsserts.getApplicationName(), "wrong application name");
+        Assert.assertEquals(APPLICATION_STATE, applicationAsserts.getApplicationState(), "wrong application state");
 
     }
 
