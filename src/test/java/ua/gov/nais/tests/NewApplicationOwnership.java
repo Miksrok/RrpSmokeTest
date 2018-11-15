@@ -60,6 +60,7 @@ public class NewApplicationOwnership extends BaseTest {
         Person person = new Person();
 
         personBlock.enterInformationAboutPerson(
+                OWNERSHIP,
                 person.getFullName(),
                 person.getId(),
                 person.getPassport(),

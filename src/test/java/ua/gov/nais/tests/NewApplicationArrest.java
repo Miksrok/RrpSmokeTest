@@ -57,6 +57,7 @@ public class NewApplicationArrest extends BaseTest{
         Person person = new Person();
 
         personBlock.enterInformationAboutPerson(
+                ARREST,
                 person.getFullName(),
                 person.getId(),
                 person.getPassport(),

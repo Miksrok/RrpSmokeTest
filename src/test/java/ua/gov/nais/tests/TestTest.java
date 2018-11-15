@@ -211,6 +211,12 @@ public class TestTest extends BaseTest {
 
         Section section = new Section(driver);
         //section.pressOwnershipButton();
+        section.clickPerformTheActionButton();
+        section.clickEndOfSectionOpening();
+        section.typeTextWithReason();
+        section.pressContinueButton();
+        section.pressNoButton();
+
         section.pressArrestButton();
 
         /*Ownership ownership = new Ownership(driver);
@@ -243,7 +249,6 @@ public class TestTest extends BaseTest {
 
         ArrestSubjectTab arrestSubjectTab = new ArrestSubjectTab(driver);
         arrestSubjectTab.pressSubjectButton();
-        arrestSubjectTab.pressAddSbjFromStatementButton();
         arrestSubjectTab.pressAddSbjFromStatementButton();
         arrestSubjectTab.pressFirstSubjectCheckBox();
         arrestSubjectTab.pressOkSbjButton();
