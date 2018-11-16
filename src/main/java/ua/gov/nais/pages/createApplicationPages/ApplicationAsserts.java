@@ -14,15 +14,15 @@ public class ApplicationAsserts extends MotherPage {
     @FindBy(xpath = "//label[text() = 'Стан:']/../label[2]")
     private WebElement applicationState;
 
-
     public ApplicationAsserts(WebDriver driver) {
         super(driver);
     }
 
-    public String getApplicationName(){
+    public String getApplicationName() {
         return ActionsWithElements.init(driver).getTextFromElement(applicationName);
     }
-    public String getApplicationState(){
+
+    public String getApplicationState() {
         return ActionsWithElements.init(driver).getTextFromElement(applicationState);
     }
 
