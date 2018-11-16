@@ -8,20 +8,21 @@ import ua.gov.nais.utilities.ActionsWithElements;
 
 public class DecisionPage extends MotherPage {
 
-    @FindBy (xpath = "//span[text() = 'Перегляд документа']/../../div[4]")
+    @FindBy(xpath = "//span[text() = 'Перегляд документа']/../../div[4]")
     private WebElement closeModalWindow;
 
-    @FindBy (xpath = "//label[text() = 'Рішення №:']/../../../../../div[2]/*/*/*/label[1]")
+    @FindBy(xpath = "//label[text() = 'Рішення №:']/../../../../../div[2]/*/*/*/label[1]")
     private WebElement decisionNumber;
 
     public DecisionPage(WebDriver driver) {
         super(driver);
     }
 
-    public void closeDocumentPage(){
+    public void closeDocumentPage() {
         ActionsWithElements.init(driver).clickOnElement(closeModalWindow);
     }
-    public String getDecisionNumber(){
+
+    public String getDecisionNumber() {
         String number = decisionNumber.getText();
         return number;
     }
