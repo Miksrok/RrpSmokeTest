@@ -115,13 +115,15 @@ public class PersonBlock extends MotherPage {
     }
 
    // поправить под аресты
-    public void enterInformationAboutPerson(String fullName, String id, String passportNumber,
+    public void enterInformationAboutPerson(String applicationName, String fullName, String id, String passportNumber,
                                             String passportDate, String passportPublisher){
         clickPersonBlockButton();
         clickAddPersonButton();
         clickAddPhisycalPersonButton();
         clickRoleList();
-        addPersonOfLaw();
+        if (!applicationName.equals("заява про державну реєстрацію обтяження")){
+            addPersonOfLaw();
+        }
         addApplicantItem();
         clickCloseRoleList();
         enterFullName(fullName);

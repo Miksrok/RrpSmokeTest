@@ -57,6 +57,7 @@ public class NewApplicationOtherOwnership extends BaseTest{
         Person person = new Person();
 
         personBlock.enterInformationAboutPerson(
+                OTHER_OWNERSHIP,
                 person.getFullName(),
                 person.getId(),
                 person.getPassport(),
